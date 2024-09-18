@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    background-color: #171d25;
+    overflow: hidden;
+
+
+
+}
+
+.navbar h1 {
+    color: #dcdedf;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 18px;
+    font-size: 200%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #dcdedf;
+    text-align: center;
+    padding: 0px 18px;
+    font-size: 150%;
+    text-decoration: none;
+    margin: 5px;
+
+
+
+}
+
+.navbar a:hover {
+
+    color: azure;
+
+
+}
+
+.navbar a.active {
+
+    color: #1a9fff;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+
+}
+
+.navbar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .navbar.responsive {
+        position: relative;
+    }
+
+    .navbar.responsive .icon {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar.responsive a {
+        float: left;
+        display: block;
+        text-align: left;
+        font-size: 110%;
+        margin: 0;
+    }
+
+    #bar {
+        padding: 0%;
+    }
+
+
+
+}
+
+.OuterWrapper {
+    width: 80%;
+}
+.ContentWrapper {
+    overflow:hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.MainContent {
+    display: table;
+}
+
+.MainColumn {
+    width: 66.66667%;
+    float: left;
+}
+
+.SideColumn {
+    width: 33.33333%;   
+    float: right;
+    word-wrap: break-word;
+    padding-left: 45px;
+    padding-right: 15px;
+}
