@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 ,user_scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,user_scalable=yes">
     <title>Game Information</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -15,7 +15,7 @@
         <div class="navbar" id="Mainnavbar">
             <h1>Games Catalog</h1>
             <nav>
-                <a href="Index.html">Home</a>
+                <a href="../Index.html">Home</a>
                 <a href="Games.html">Games</a>
                 <a href="About.html">About</a>
                 <a href="Contact.html">Contact</a>
@@ -30,8 +30,12 @@
             <div class="MainColumn">
                 <h2>Game Information</h2>
                    <div id="game-info">
-
+                        
                     
+                   </div>
+                   <h2>Requirements</h2>
+                   <div id="requirements">
+
                    </div>
             </div>
 
@@ -48,9 +52,10 @@
 
 </body>
 
-<script src="javascript/script.js"></script>
+<script src="../javascript/script.js"></script>
 <script>
-    fetchFeaturedCategories();
     getGameInfoQuery();
+    fetchFeaturedCategories();
+    
 </script>
 </html>
