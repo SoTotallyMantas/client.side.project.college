@@ -93,15 +93,11 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         {
             return;
         }
-        var SteamDeckBool = Boolean(false);
+        
         topSellers.forEach(item => {
             
-            if(SteamDeckBool == false || item.name != 'Steam Deck')
+            if(item.name != 'Steam Deck')
             {
-               if(item.name == 'Steam Deck')
-               {
-                   SteamDeckBool = true;
-               }
    
        const itemDiv = document.createElement('div');
        itemDiv.setAttribute('class', 'top-sellers-item');
@@ -136,7 +132,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         currentPath = window.location.pathname.split('/').pop();
         const newReleases = parsedData.new_releases.items;
         const container = document.getElementById('new-releases');
-        var SteamDeckBool = Boolean(false);
+        
         if(container == null)
         {
             return;
@@ -144,12 +140,9 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         newReleases.forEach(item => {
             
             
-            if(SteamDeckBool == false || item.name != 'Steam Deck')
+            if(item.name != 'Steam Deck')
             {
-               if(item.name == 'Steam Deck')
-               {
-                   SteamDeckBool = true;
-               }
+              
 
                if(container.childElementCount < 6)
                {
