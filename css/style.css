@@ -81,11 +81,11 @@ ul {
   .requirements_content {
     font-family: Arial, sans-serif;
   }
-  #requirements a {
+  #game-info a {
     text-decoration: none;
     color: #1a9fff;
   }
-  #requirements a:hover {
+  #game-info a:hover {
     text-decoration: none;
     color: #85e0fc;
     }
