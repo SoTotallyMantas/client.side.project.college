@@ -202,7 +202,7 @@ ul {
  
 .navbar a {
     display: inline-block;
-    color: #dcdedf !important; /* !important to override the global a color:gray */
+    color: #dcdedf ; 
     padding: 0px 18px;
     font-size: 150%;
     text-decoration: none;
@@ -211,11 +211,11 @@ ul {
 }
 
 .navbar a:hover {
-    color: azure !important;
+    color: azure  ;
 }
 
 .navbar a.active {
-    color: #1a9fff !important;
+    color: #1a9fff  ;
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
@@ -261,6 +261,7 @@ ul {
 }
 
 .ContentWrapper {
+    color: white;
     overflow: hidden;
     padding: 30px 0;
 }
@@ -271,7 +272,7 @@ ul {
 }
 
 .MainColumn h2, .SideColumn h2 {
-    color: white;
+   
     padding-left: 15px;
 }
 
@@ -469,12 +470,16 @@ ul {
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
-    line-height: 1.5em;
+    line-height: 1em;
     color: white;
     text-align: justify;
     font-size: x-large;
     background: linear-gradient(to right, #243B55, #141E30);
 
+  }
+  #About h2 , h3{
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   #Contact
@@ -514,6 +519,7 @@ ul {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    color: white;
   }
   
   
