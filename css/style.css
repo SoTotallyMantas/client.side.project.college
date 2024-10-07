@@ -186,6 +186,7 @@ ul {
 
 /* Navbar Styles */
 .navbar {
+    color: #dcdedf;
     display: block;
     padding: 13px 8px;
     text-align: center;
@@ -196,7 +197,6 @@ ul {
 }
 
 .navbar h1 {
-    color: #dcdedf;
     font-size: 200%;
 }
  
@@ -211,11 +211,11 @@ ul {
 }
 
 .navbar a:hover {
-    color: azure;
+    color: azure !important;
 }
 
 .navbar a.active {
-    color: #1a9fff;
+    color: #1a9fff !important;
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
