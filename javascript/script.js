@@ -424,8 +424,48 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
               document.getElementById(platformId).classList.add('active');
             });
           });
+          // Find the first available platform tab and click it
+        const firstTab = document.querySelector('.platform_tab');
+        if (firstTab) {
+        firstTab.click();
+        }       
           
     }
+
+    
+    async function fetchAppList()
+    {
+        
+            fetch('../tempAppList.json')
+            .then(response => response.json())
+
+            .then(jsonData => {
+                populateTable(jsonData);
+            })
+
+            .catch(error => console.error(error));
+    }
+
+    async function populateTable(jsonData) {
+        
+        const apps = jsonData.response.apps;
+        const tableBody = document.querySelector("#appsTable tbody");
+  
+        apps.forEach(app => {
+
+          const row = document.createElement("tr");
+          const nameCell = document.createElement("td");
+          const link = document.createElement("a");
+
+          link.href = `gameInfo.html?appid=${app.appid}`;
+          link.textContent = app.name;
+
+          nameCell.appendChild(link);
+          row.appendChild(nameCell);
+          
+          tableBody.appendChild(row);
+        });
+      }
    
       
 
