@@ -27,7 +27,12 @@ ul {
     unicode-bidi: isolate;
 }
 
+#detailed_description {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20% 2em 20% !important
 
+}
 #game-info {
     background: #171d25;
     border-radius: 15px;
@@ -42,11 +47,37 @@ ul {
 }
 #supported_languages , #detailed_description, #dev-pub-section, #cat-gen-section  {
     margin: 5px;
-    border-radius: 15px;
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    background: linear-gradient(to right, #385c85, #233555);
 
+}
+#game_info_wrapper{
+    display: flex;
+}
+#game_info_wrapper h2 {
+    margin: 0.5em 1em 0.5em 1em
+
+}
+.bb_tag
+{
+    margin-left: 0 !important; /* Finally Found Important usage */
+    margin-bottom: 0.5em;
+}
+
+img.bb_img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+p.bb_paragraph {
+    min-height: .15em;
+    line-height: 1.5em;
+    margin: 0.5em 0em;
+    padding: 0px 5em;
+    text-align: justify;
 }
 /* Requirements Platform Tabs */
 .requirements_tabs {
@@ -54,6 +85,7 @@ ul {
     border-bottom: 1px solid #444;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    padding-left: 5em;
   }
   
   .platform_tab {
@@ -149,51 +181,92 @@ ul {
 }
 #game-info, #detailed_description {
 	line-height: 1.5em;
-	font-size: 18px;
-	
+	font-size: 18px;	
 	overflow: hidden;
 	max-width: 100%;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 2em;
 	}
 
 #game-image{
-    margin-top: 20px;
-    margin-left: 10px;
+    margin: 1em;
     border-radius: 12px;
-    max-width: 100%;
+    width: 75%;
 }
 #dev-pub-section {
-    display: block;
+    display: flex;
     text-align: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#dev-pub-section ul {
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;
+    margin: 1em 0em;
+}
+#supported_languages {
+    display: flex;
+    text-align: left;
+    margin: 20px 0px;
+}
+#cat-gen-section{
+    display: flex;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
 }
 
-#developer-list, #publisher-list {
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+ul.category-list {
+    padding-inline-start: 20px;
+}
 
-    margin:initial;
+.category-item:last-child {
+    border-bottom: none; 
+}
+
+.category-icon {
+    margin-right: 10px; 
+}
+
+.category-item span {
+    color: #ffffff; 
+    font-size: 16px; 
+}
+
+
+#developer-list, #publisher-list,#genre-list {
+
+    
     list-style-type: none;
+
 }
-#cat-gen-section {
-    display: -webkit-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 
 
 
 /* Navbar Styles */
 .navbar {
     color: #dcdedf;
-    display: block;
+    display: flex;
     padding: 13px 8px;
     text-align: center;
     background-color: #171d25;
     position: sticky;
     top: 0;
     z-index: 20;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navbar h1 {
@@ -226,13 +299,21 @@ ul {
 
 /* Responsive navbar for small screens */
 @media screen and (max-width: 600px) {
-    .navbar a:not(:first-child) {
+    .navbar a {
         display: none;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
     }
 
     .navbar a.icon {
         float: right;
         display: block;
+
     }
 
     .navbar.responsive {
@@ -241,6 +322,8 @@ ul {
 
     .navbar.responsive .icon {
         display: block;
+        margin: 1em;
+        padding-left: 85%;
     }
 
     .navbar.responsive a {
@@ -254,34 +337,38 @@ ul {
     }
 
 /* Layout Wrappers */
-.OuterWrapper {
-    width: 100%;
-    max-width: 1182px;
-    margin: auto;
-}
+
 
 .ContentWrapper {
     color: white;
+    display: flex;
     overflow: hidden;
-    padding: 30px 0;
+    margin: 40px 40px;
+    gap: 20px;
 }
 
 .MainColumn {
     width: 66.67%;
     float: left;
+    background: #171d25;
+    border-radius: 15px;
 }
 
-.MainColumn h2, .SideColumn h2 {
-   
-    padding-left: 15px;
-}
 
 /* SideColumn adjustments */
 .SideColumn {
+    background: #171d25;
+    border-radius: 15px;
     width: 33.33%;
     float: right;
-    padding: 0 15px 0 45px;
-    word-wrap: break-word;
+}
+
+#top-sellers{
+
+    display: flex;
+    padding-bottom: 2em;
+    flex-wrap: wrap;
+  
 }
 
 .topSellers-image, .newReleases-image {
@@ -299,15 +386,16 @@ ul {
 /* Example of Inheritance */
 .top-sellers-item, .new-releases-item {
     position: relative;
-    display: inline-block;
-    padding: 0 15px;
+    display: flex;
     vertical-align: top;
-    width: 49.7%;
+    width: 50%;
+    justify-content: center;
     color:white ; /* set color for children Instead of global a color:gray */
 }
 
 .top-sellers-item {
-    margin-top: 10px;
+    padding: 12px 0px;
+    margin-top: 25px;
    
 }
 
@@ -329,16 +417,23 @@ ul {
     padding-left: 15px;
     
 }
-
-/* Section Containers */
-#top-sellers, #new-releases {
-    margin: 0 -15px;
+.SideColumn .MainColumn, h2 {
+    margin-top: 25px;
+    margin-left: 12%;
+}
+.MainColumn h2 {
+    margin-left: 3em;
+    width: 100%;
 }
 
+/* Section Containers */
+
+
 #new-releases {
-    display: grid;
-    background: #171d25;
-    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 2em;
 }
 
 
@@ -422,13 +517,18 @@ ul {
     font-size: 18px;
 }
 #game-list {
+
     color:white;
     display: flex;
-    border-radius: 15px;
+    padding: 1em;
+    margin: 1em;
     background: #141E30;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #243B55, #1e2c47);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #243B55, #141e30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+        flex-wrap: wrap;
+}
+#game-list h2 {
+    margin: 0.5em 1em;
 }
 
 /* Table Styles for games List */
@@ -449,7 +549,7 @@ ul {
     border: 1px solid black;
    
     background: linear-gradient(to right, #385c85, #233555);
-    padding: 8px;
+    padding: 1em;
     text-align: left;
   }
  
@@ -465,48 +565,61 @@ ul {
     text-decoration: underline;
   }
   #About{
-    margin: 5px;
+    display: flex;
+    margin: 1em;
     border-radius: 20px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
     line-height: 1em;
     color: white;
     text-align: justify;
-    font-size: x-large;
+    font-size: large;
     background: linear-gradient(to right, #243B55, #141E30);
-
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em 10% 1em 10%;
   }
   #About h2 , h3{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0;
+    text-align: center;
+    padding: 0em 1em 1em 1em;
+  }
+  #About p {
+    padding: 0em 1em 1em 1em;
+  }
+  #About li {   
+    margin: 1em 0em;
   }
 
   #Contact
   {
-    border-radius: 20px;
+    display: flex;
+    margin: 2em;
     background: linear-gradient(to right, #243B55, #141E30);
     color: white;
-  }
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+    #Contact h2 {
+        margin-left: 1em;
+        padding-top: 1em;
+        margin-bottom: 1em;
+    }
+  
   #contactForm label
   {
     font-size: large;
     display: block;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 1em;
     font-weight: bold;
   }
    
   input[type=text], input[type=email], select, textarea {
-    margin-left: 10px;
+    margin: 1em;
     width: 95%;
-    padding: 12px; 
+    padding: 1em; 
     border: 1px solid #ccc;
     border-radius: 4px; 
     box-sizing: border-box; 
-    margin-top: 6px; 
-    margin-bottom: 16px; 
+  
     resize: vertical;
 }
   
@@ -527,6 +640,56 @@ ul {
     background: linear-gradient(to right, #567eac, #5075bb);
   }
   
- 
-  
+ /* Languages Table */
+#language_table {
+    width: 50%; /* Adjusted to be narrower */
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #1b2838; /* Dark background to match the interface */
+    color: #c7d5e0; /* Lighter text color */
+}
 
+#language_table th,
+#language_table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #3a3f44; /* Darker border for a more subtle look */
+}
+
+#language_table th {
+    background-color: #1f3b4d; /* Slightly darker header background */
+    color: #c7d5e0; /* Keep text color readable */
+    font-weight: normal; /* Softer text weight */
+}
+
+#language_table td.checkmark {
+    font-size: 1.5em;
+    color: #4caf50; /* Green checkmark for visibility */
+}
+
+#language_table td {
+    text-align: center;
+}
+
+/* Specific class to style the checkmark symbol */
+.checkmark {
+    font-size: 1.4em;
+    color: #4caf50; /* Green for checkmarks */
+}
+
+/* Add hover effect for a nicer feel */
+#language_table tr:hover {
+    background-color: #2a475e; /* Light hover effect */
+}
+
+#appsTable tr:hover {
+    background-color: #2a475e; /* Light hover effect */
+}
+#appsTable tr {
+    margin: 0.25em;
+    padding: 0.25em;
+    display: flex;
+    flex-direction: column;
+}

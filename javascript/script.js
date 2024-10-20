@@ -253,10 +253,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
             container.appendChild(detailed_description);
 
         
-        const supported_languages = document.createElement('p');
-        supported_languages.setAttribute('id', 'supported_languages');
-        supported_languages.innerHTML = gameInfo.supported_languages;
-        container.appendChild(supported_languages);
+       
 
         const requirementsPlatform = document.getElementById('requirements');
         const requirements_tabs = document.createElement('div');
@@ -331,13 +328,86 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         }
 
         requirementsPlatform.appendChild(requirements_content);
-        // add developers and publishers section
         
+        // add wrapper for supported languages, developers and publishers
+        const wrapper = document.createElement('div');
+        wrapper.setAttribute('id', 'game_info_wrapper');
+
+        
+        const languagetext =  await parseLanguages(gameInfo.supported_languages);
+        console.log("test");
+        // Create a table for supported languages
+        const languageTable = document.createElement('table');
+        languageTable.setAttribute('id', 'language_table');
+        // Table Head
+         const languageThead = document.createElement('thead');
+         const languageHeaderRow = document.createElement('tr');
+         
+         const headers = ['Language','Interface','Full Audio', 'Subtitles'];
+            // Create headers for the table 
+            headers.forEach(header => {
+                const th = document.createElement('th');
+                th.textContent = header;
+                languageHeaderRow.appendChild(th);
+            });
+            languageThead.appendChild(languageHeaderRow);
+            languageTable.appendChild(languageThead);
+            // Table Body
+            const languageTbody = document.createElement('tbody');
+
+            languagetext.forEach(language => {
+
+                // Create a new row
+                const row = document.createElement('tr');
+
+                // Create a new cell
+                const languageCell = document.createElement('td');
+                languageCell.textContent = language.name;
+                row.appendChild(languageCell);
+
+                // Interface cell
+                const InterfaceCell = document.createElement('td');
+                InterfaceCell.textContent = '✔';
+                row.appendChild(InterfaceCell);
+
+                // Create Checkmark cell
+                const fullAudioCell = document.createElement('td');
+                fullAudioCell.textContent = language.fullAudio ? '✔' : ' ';
+                row.appendChild(fullAudioCell);
+
+                // Subtitles cell
+                const subtitlesCell = document.createElement('td');
+                subtitlesCell.textContent = '✔';
+                row.appendChild(subtitlesCell);
+
+                
+                // Append the row to the table body
+                languageTbody.appendChild(row);
+
+            });
+           
+            languageTable.appendChild(languageTbody);
+
+            wrapper.appendChild(languageTable);
+            
+
+
+
+
+
+        /* Old Supported Languages Before Table
+        // add supported languages section
+        const supported_languages = document.createElement('p');
+        supported_languages.setAttribute('id', 'supported_languages');
+        supported_languages.innerHTML = gameInfo.supported_languages;
+        wrapper.appendChild(supported_languages);
+        // add developers and publishers section
+        */
         const devPubSection = document.createElement('div');
         devPubSection.setAttribute('id', 'dev-pub-section');
         // add label for developers
         const developerLabel = document.createElement('h2');
-        developerLabel.innerText = 'Developers:';
+        developerLabel.innerText = 'Developers';
         devPubSection.appendChild(developerLabel);
         // add developers list
         const developerList = document.createElement('ul');
@@ -353,7 +423,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
 
         // add label for publishers
         const publisherLabel = document.createElement('h2');
-        publisherLabel.innerText = 'Publishers:';
+        publisherLabel.innerText = 'Publishers';
         devPubSection.appendChild(publisherLabel);
         // add publishers list
         const publisherList = document.createElement('ul');
@@ -366,14 +436,24 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         });
         devPubSection.appendChild(publisherList);
 
-
-        container.appendChild(devPubSection);
-
-
-
-
-
-
+         // add label for genres
+         const genreLabel = document.createElement('h2');
+         genreLabel.innerText = 'Genres';
+         devPubSection.appendChild(genreLabel);  
+ 
+         // add genres list
+         const genreList = document.createElement('ul');
+         genreList.setAttribute('id', 'genre-list');
+         gameInfo.genres.forEach(item => {
+             const genre = document.createElement('li');
+             genre.setAttribute('id', 'genre');
+             genre.innerText = item.description;
+             genreList.appendChild(genre);
+         });
+         devPubSection.appendChild(genreList);
+        wrapper.appendChild(devPubSection);
+        
+        
         // Create Categories and Genres section
         const catGenSection = document.createElement('div');
         catGenSection.setAttribute('id', 'cat-gen-section');
@@ -383,35 +463,37 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         categoryLabel.innerText = 'Categories';
         catGenSection.appendChild(categoryLabel);
 
+        const dictionary = await parseCategoriesImageLinksToDictionary();
+        console.log(dictionary); // check if dictionary is populated
         // add categories list
         const categoryList = document.createElement('ul');
-        categoryList.setAttribute('id', 'category-list');
+        categoryList.setAttribute('class', 'category-list');
         gameInfo.categories.forEach(item => {
             const category = document.createElement('li');
-            category.setAttribute('id', 'category');
-            category.innerText = item.description;
+            category.setAttribute('class', 'category-item');
+             const categoryIcon = document.createElement('img');
+             try
+             {
+             categoryIcon.src = dictionary.find(x => x.category === item.description).imagelink;
+             }
+             catch (error)
+             {
+                 console.log(error);
+             }            
+             categoryIcon.alt = item.description;
+             categoryIcon.setAttribute('class', 'category-icon');
+
+             const CategoryText = document.createElement('span');
+                CategoryText.innerText = item.description;
+
+            category.appendChild(categoryIcon);
+            category.appendChild(CategoryText);
             categoryList.appendChild(category);
         });
         catGenSection.appendChild(categoryList);
 
-        // add label for genres
-        const genreLabel = document.createElement('h2');
-        genreLabel.innerText = 'Genres';
-        catGenSection.appendChild(genreLabel);  
-
-        // add genres list
-        const genreList = document.createElement('ul');
-        genreList.setAttribute('id', 'genre-list');
-        gameInfo.genres.forEach(item => {
-            const genre = document.createElement('li');
-            genre.setAttribute('id', 'genre');
-            genre.innerText = item.description;
-            genreList.appendChild(genre);
-        });
-        catGenSection.appendChild(genreList);
-
-        container.appendChild(catGenSection);
-
+        wrapper.appendChild(catGenSection);
+        container.appendChild(wrapper);
         document.querySelectorAll('.platform_tab').forEach(tab => {
             tab.addEventListener('click', function() {
               // Remove active class from all tabs and requirements
@@ -466,7 +548,49 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
           tableBody.appendChild(row);
         });
       }
-   
+
+      async function parseLanguages(text) {
+        
+        const languages = text.replace(/<strong>\*<\/strong>/g, '*').split(',');
+    
+        
+        return languages.map(language => {
+            
+            const cleanLanguage = language.split('<br>')[0].trim();
+            
+            
+            const hasFullAudio = cleanLanguage.includes('*');
+            const name = cleanLanguage.replace('*', '').trim();
+            
+            return {
+                name: name,
+                fullAudio: hasFullAudio
+            };
+        });
+    }
+     
+    async function parseCategoriesImageLinksToDictionary()
+    {
+        
+        try {
+            const response = await fetch('../categoriesImageLinks.json');
+            const categoryData = await response.json();
+            const linksArray = categoryData.links;
+    
+            const dictionary = linksArray.map(category => ({
+                category: category.category,
+                imagelink: category.imagelink
+            }));
+    
+            return dictionary; 
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return null; 
+        }
+        
+    }
+    
+      
       
 
   

@@ -1,0 +1,137 @@
+{
+    "links": [
+        {
+            "category": "Single-player",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_singlePlayer.png"
+        },
+        {
+            "category": "Online PvP",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_multiPlayer.png"
+            
+        },
+        {
+            "category": "Steam Achievements",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_achievements.png"
+            
+        },
+        {
+            "category": "Shared/Split Screen PvP",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_multiPlayer.png"
+            
+        },
+        {
+            "category": "Steam Cloud",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_cloud.png"
+            
+        },
+        {
+            "category": "Remote Play Together",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_remote_play_together.png"
+            
+        },
+        {
+            "category": "HDR available",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_hdr.png"
+            
+        },
+        {
+            "category": "Family Sharing",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_familysharing.png"
+            
+        },
+        {
+            "category": "Steam Workshop",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_workshop.png"
+            
+        },
+        {
+            "category": "Steam Leaderboards",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_leaderboards.png"
+            
+        },
+        {
+            "category": "VR Supported",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_vr_support.png"
+        },
+        {
+            "category": "In-App Purchases",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_cart.png"
+
+        },
+        {
+            "category": "Remote Play on Phone",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_remote_play.png"
+        },
+        {
+            "category": "Remote Play on Tablet",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_remote_play.png"
+        },
+        {
+            "category": "Remote Play on TV",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_remote_play.png"
+        },
+        {
+            "category": "Cross-Platform Multiplayer",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_multiPlayer.png"
+        },
+        {
+            "category": "Online Co-op",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_coop.png"
+        },
+        {
+            "category": "MMO",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_multiPlayer.png"
+        },
+        {
+            "category": "Steam Timeline",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_timeline.png"
+        },
+        {
+            "category": "Commentary available",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_commentary.png"
+        },
+        {
+            "category": "Includes Source SDK",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_sdk.png"
+        },
+        {
+            "category": "stats",
+             "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_stats.png"
+        },
+        {
+            "category": "Valve Anti-Cheat enabled",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_vac.png"
+        },
+        {
+            "category": "Captions available",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_cc.png"
+        },
+        {
+            "category": "Steam Trading Cards",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_cards.png"
+        },
+        {
+            "category": "Downloadable Content",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_dlc.png"
+        },
+        {
+            "category": "SteamVR Collectibles",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_collectibles.png"
+        },
+        {
+            "category": "VR Only",
+            "imagelink": "https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_vr_support.png"
+        },
+        {
+            "category":"Tracked Controller Support",
+            "imagelink":"https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_vr_input_motion.png"
+        },
+        {
+            "category":"Includes level editor",
+            "imagelink":"https://store.cloudflare.steamstatic.com/public/images/v6/ico/ico_editor.png"
+
+        }
+
+
+    ]
+}
