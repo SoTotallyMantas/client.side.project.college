@@ -88,7 +88,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
 
 
         const topSellers = parsedData.top_sellers.items;
-        const container = document.getElementById('top-sellers');
+        const container = document.getElementsByClassName('top-sellers')[0];
         if(container == null)
         {
             return;
@@ -131,61 +131,60 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
     async function PopulateNewReleases(parsedData) {
         currentPath = window.location.pathname.split('/').pop();
         const newReleases = parsedData.new_releases.items;
-        const container = document.getElementById('new-releases');
+        const container = document.getElementsByClassName('new-releases')[0];
         
-        if(container == null)
-        {
+        if (container == null) {
             return;
         }
+       
         newReleases.forEach(item => {
-            
-            
-            if(item.name != 'Steam Deck')
-            {
-              
+               
+                
 
-               if(container.childElementCount < 6)
-               {
-                // Create a new div element
-       const itemDiv = document.createElement('div');
-       itemDiv.setAttribute('class', 'new-releases-item');
-                // Create a new link element
-       const link = document.createElement('a');
-       if(currentPath == 'index.html')
-       {
-        link.href = `html/gameInfo.html?appid=${item.id}`;
-        
-       }
-       else
-       {
-        link.href = `gameInfo.html?appid=${item.id}`;
-       }
-        
-        link.target = '_self';
-                // Create a new image element
-       const img = document.createElement('img');
-       img.setAttribute('class', 'newReleases-image');
-       img.src = item.header_image;
-       link.appendChild(img);
-                // Create a new header element
-       const header = document.createElement('header');
-       header.innerText = item.name;
-       link.appendChild(header);
-                // Create a new footer element  
-       const footer = document.createElement('footer');
-       footer.innerText = (item.final_price / 100 + '€');
-       link.appendChild(footer);
-                // Append the link to the div
-       itemDiv.appendChild(link);
-                // Append the div to the container
-       container.appendChild(itemDiv);
-               }
-               else
-               {
-                 return;
-               } 
-            }
-       });  
+            if (item.name != 'Steam Deck') {
+                
+                
+                
+                
+                    if (container.childElementCount < 6) {
+                        // Create a new div element
+                        const itemDiv = document.createElement('div');
+                        itemDiv.setAttribute('class', 'new-releases-item');
+                        // Create a new link element
+                        const link = document.createElement('a');
+                        if (currentPath == 'index.html') {
+                            link.href = `html/gameInfo.html?appid=${item.id}`;
+
+                        }
+                        else {
+                            link.href = `gameInfo.html?appid=${item.id}`;
+                        }
+
+                        link.target = '_self';
+                        // Create a new image element
+                        const img = document.createElement('img');
+                        img.setAttribute('class', 'newReleases-image');
+                        img.src = item.header_image;
+                        link.appendChild(img);
+                        // Create a new header element
+                        const header = document.createElement('header');
+                        header.innerText = item.name;
+                        link.appendChild(header);
+                        // Create a new footer element  
+                        const footer = document.createElement('footer');
+                        footer.innerText = (item.final_price / 100 + '€');
+                        link.appendChild(footer);
+                        // Append the link to the div
+                        itemDiv.appendChild(link);
+                        // Append the div to the container
+                        container.appendChild(itemDiv);
+                    }
+                    else {
+                        return;
+                    }
+                 }
+                
+            });
     }
     function getGameInfoQuery()
     {
@@ -220,6 +219,10 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
     async function PopulateGameInfo(parsedData)
     {
         const container = document.getElementById('game-info');
+
+
+            
+                   
         if(parsedData == null)
         {
             return;
@@ -232,7 +235,32 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         var IsWindows = Boolean(false);
         var IsMac = Boolean(false);
         var IsLinux = Boolean(false);
+        // Hide the game info container if the game is for adults only
+        if(gameInfo.ratings.dejus.rating == '18')
+            {
 
+            const containerMain = document.getElementsByClassName('MainColumn')[0];
+            const ageRestriction = document.createElement('div');
+            ageRestriction.setAttribute('id', 'age-restriction');
+            ageRestriction.innerText = '18+ Restricted';
+
+            ageRestriction.style.position = 'absolute';
+            ageRestriction.style.top = '0';
+            ageRestriction.style.left = '0';
+            ageRestriction.style.width = '100%';
+            ageRestriction.style.height = '100%';
+            ageRestriction.style.backgroundColor = 'red';
+            ageRestriction.style.color = 'white';
+            ageRestriction.style.display = 'flex';
+            ageRestriction.style.alignItems = 'center';
+            ageRestriction.style.justifyContent = 'center';
+            ageRestriction.style.fontSize = '2rem'; 
+
+    // Ensure the parent is positioned relative to handle the overlay properly
+    containerMain.style.position = 'relative';
+                containerMain.appendChild(ageRestriction);
+                return; 
+            }
          
 
         const name = document.createElement('h1');
@@ -538,8 +566,15 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
           const row = document.createElement("tr");
           const nameCell = document.createElement("td");
           const link = document.createElement("a");
-
-          link.href = `gameInfo.html?appid=${app.appid}`;
+            if(window.location.pathname.split('/').pop() == 'index.html')
+            {
+                link.href = `html/gameInfo.html?appid=${app.appid}`;
+            }
+            else
+            {
+                link.href = `gameInfo.html?appid=${app.appid}`;
+            }
+          
           link.textContent = app.name;
 
           nameCell.appendChild(link);
