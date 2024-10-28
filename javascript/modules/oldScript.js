@@ -16,48 +16,7 @@ const apiSteamGetAppDetails = 'https://store.steampowered.com/api/appdetails?app
 // Proxy used to interact with steam API
 const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURIComponent(apiSteamCategories)}`;
 
-    // Not Used
-    async function fetchTopSellers() 
-{
-    try
-    {
-        const response = await fetch(corsProxyCategories);
-        if(!response.ok)
-        {
-            throw new Error('HTTP error, status = ' + response.status);
-        }
-
-        const data = await response.json();
-        const parsedData = JSON.parse(data.contents);
-
-        const topSellers = parsedData.tabs.viewall.items;
-        const idsArray = topSellers.map(item => item.id);
-       
-        ArrayParser(idsArray);
-    }
-    catch (error)
-    {
-        console.log(error);
-    }
-
-    }
-    async function ArrayParser(idsArray)
-{
-    try
-    {
-        idsArray.forEach(async id => {
-            
-        const data = await fetchAppDetails(id);
-        wait(5000);
-        });
-
-    }
-    catch (error)
-    {
-        console.log(error);
-    }
-    }
-
+   
     async function fetchFeaturedCategories()
 {
     try
@@ -156,6 +115,9 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
                             link.href = `html/gameInfo.html?appid=${item.id}`;
 
                         }
+                        else if (currentPath == ''){
+                            link.href = `html/gameInfo.html?appid=${item.id}`;
+                        }
                         else {
                             link.href = `gameInfo.html?appid=${item.id}`;
                         }
@@ -236,6 +198,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
         var IsMac = Boolean(false);
         var IsLinux = Boolean(false);
         // Hide the game info container if the game is for adults only
+        try{
         if(gameInfo.ratings.dejus.rating == '18')
             {
 
@@ -261,6 +224,11 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
                 containerMain.appendChild(ageRestriction);
                 return; 
             }
+        }
+        catch (error)
+        {
+            console.log(error);
+        }
          
 
         const name = document.createElement('h1');
@@ -423,14 +391,7 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
 
 
 
-        /* Old Supported Languages Before Table
-        // add supported languages section
-        const supported_languages = document.createElement('p');
-        supported_languages.setAttribute('id', 'supported_languages');
-        supported_languages.innerHTML = gameInfo.supported_languages;
-        wrapper.appendChild(supported_languages);
-        // add developers and publishers section
-        */
+        
         const devPubSection = document.createElement('div');
         devPubSection.setAttribute('id', 'dev-pub-section');
         // add label for developers
@@ -566,14 +527,16 @@ const corsProxyCategories = `https://api.allorigins.win/get?url=${encodeURICompo
           const row = document.createElement("tr");
           const nameCell = document.createElement("td");
           const link = document.createElement("a");
-            if(window.location.pathname.split('/').pop() == 'index.html')
-            {
+            
+            /* if no path is specified or in home  index.html is assumed */
+            const currentPath = window.location.pathname.split('/').pop();
+            if (currentPath == 'index.html') {
                 link.href = `html/gameInfo.html?appid=${app.appid}`;
             }
-            else
-            {
+            else {
                 link.href = `gameInfo.html?appid=${app.appid}`;
             }
+
           
           link.textContent = app.name;
 

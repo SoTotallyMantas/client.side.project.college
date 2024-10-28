@@ -263,7 +263,7 @@ ul.category-list {
 }
 
 
-#developer-list, #publisher-list,#genre-list {
+#developers-list, #publishers-list,#genres-list {
 
     
     list-style-type: none;
@@ -316,9 +316,13 @@ ul.category-list {
 .navbar .icon {
     display: none;
 }
-
+@media screen and ( max-width: 505px) {
+    nav {
+        flex-direction: column !important;
+    }
+}
 /* Responsive navbar for small screens */
-@media screen and (max-width: 765px) {
+@media screen  and (max-width: 765px) {
     .navbar a {
         display: none;
     }
@@ -334,6 +338,8 @@ ul.category-list {
     .navbar a.icon {
         float: right;
         display: block;
+        padding: 0 1em;
+        margin: 5px 5px;
 
     }
     .navbar{
@@ -410,6 +416,7 @@ ul.category-list {
     .navbar{
         justify-content:unset;
     }
+
    
     .navbar.responsive .icon
     {
@@ -423,6 +430,7 @@ ul.category-list {
     .navbar a.icon {
         
         display: block;
+        padding: 0;
 
     }
    
