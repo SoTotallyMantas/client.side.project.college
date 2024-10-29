@@ -277,6 +277,7 @@ ul.category-list {
 .navbar {
     color: #dcdedf;
     display: flex;
+    align-items: center;
     padding: 13px 8px;
     text-align: center;
     background-color: #171d25;
@@ -294,6 +295,9 @@ ul.category-list {
 }
  
 .navbar a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
     display: inline-block;
     color: #dcdedf ; 
     padding: 0px 18px;
@@ -308,6 +312,7 @@ ul.category-list {
 }
 
 .navbar a.active {
+    
     color: #1a9fff  ;
     text-decoration: underline;
     text-decoration-thickness: 3px;
@@ -337,7 +342,8 @@ ul.category-list {
 
     .navbar a.icon {
         float: right;
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0 1em;
         margin: 5px 5px;
 
@@ -351,7 +357,8 @@ ul.category-list {
     }
 
     .navbar.responsive .icon {
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0 1em;
         margin: 5px 5px;
 
@@ -429,7 +436,7 @@ ul.category-list {
     }
     .navbar a.icon {
         
-        display: block;
+        
         padding: 0;
 
     }
@@ -474,8 +481,7 @@ ul.category-list {
 }
 .new-releases {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding-bottom: 2em;
 }
 
@@ -504,7 +510,7 @@ ul.category-list {
 }
 
 .top-sellers-item {
-    padding: 0.5em 0.5em;
+    padding: 1em;
     margin-top: 25px;
    
 }
@@ -550,7 +556,7 @@ ul.category-list {
 }
 
 
-/* Medium Screen Breakpoint */
+
 @media screen and (max-width: 1275px) {
     
     .SideColumn {
@@ -561,7 +567,9 @@ ul.category-list {
     .ContentWrapper{
         flex-wrap:wrap;
     }
-
+    .new-releases h2 {
+        width: 100%;
+    }
     
     .MainColumn {
         width: 100%;
@@ -584,13 +592,14 @@ ul.category-list {
         
     }
     .new-releases-item {
+        width: 50%;
         margin-left: 0;
     }
 
     .top-sellers-item, .new-releases-item {
-        width: 100%;
+        
         margin-bottom: 20px;
-        padding: 0;
+        padding:1em;
         display: flex;
         justify-content: center; 
     }
@@ -614,6 +623,9 @@ ul.category-list {
         border-radius:0 ;
         border-top: solid 1px white;
         
+    }
+    .platform_requirements {
+        border-radius: 0;
     }
 
 
