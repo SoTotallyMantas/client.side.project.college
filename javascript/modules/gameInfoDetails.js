@@ -7,23 +7,41 @@ export function getGameInfoQuery() {
 }
 
 async function fetchGameInfo(appid) {
-
+    let response = await GetStaticData(appid);
+    let Flag = false;
     try {
          //const apiRequestUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiSteamGetAppDetails + appid)}`;
          //const response = await fetch(apiRequestUrl);
-         const response = await fetch("https://localhost:8081/steamApi/GameDetails?appID="+appid);
-
-         if (!response.ok) {
-             throw new Error(`HTTP error, status =  ${response.status}`);
+         
+         response = await fetch("https://localhost:8081/steamApi/GameDetails?appID="+appid);
+         if(response.ok) {
+             Flag = true;
          }
-
-            const data = await response.json();
-            //const gameInfo = JSON.parse(data.contents);
-            const gameInfo =  data;
-            displayGameInfo(gameInfo[appid]?.data);
+    
     } catch (error) {
         console.error('Error:', error);
     }
+    finally {
+        
+        
+
+           const data = await response.json();
+           let gameInfo;
+            if(Flag === true) 
+            {
+                gameInfo = data;
+            }
+            else
+            {
+                gameInfo =  data.find(obj => obj.hasOwnProperty(appid));
+            }
+           displayGameInfo(gameInfo[appid]?.data);
+    }
+}
+
+async function GetStaticData() {
+    const data = await fetch('../AppDetailsStatic.json');
+    return data;
 }
 
 function displayGameInfo(gameInfo) {
