@@ -17,6 +17,13 @@
             <a href="javascript:void(0);" class="icon" onclick="navbarMobile()" id="bar">
                 <i class="fa fa-bars"></i>
             </a>
+            <div class="search-container">
+                <form id="form-search" onsubmit="return false;" autocomplete="off">
+                    <input type="text" class="searchbar" id="searchbar-nav" placeholder="Search.." name="search" onkeyup="FilterSearch()">
+                    <button type="submit" id="searchsubmit" title="Search" onclick="FilterSearch()"><i class="fa fa-search"></i></button>
+                    <ul id="search-results"></ul>
+                </form>
+            </div>
             <nav>
                 <a href="index.html" class="active">Home</a>
                 <a href="html/Games.html">Games</a>

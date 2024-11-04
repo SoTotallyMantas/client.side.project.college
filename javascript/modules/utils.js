@@ -19,6 +19,22 @@ export async function parseCategoriesImageLinksToDictionary() {
     }
 }
 
+export function hideResults() {
+    const searchResults = document.getElementById('search-results');
+    const searchbar = document.getElementById('searchbar-nav');
+    const searchbutton = document.getElementById('searchsubmit');
+    
+    if( !searchResults.matches(':hover') && !searchbar.matches(':hover') && !searchbutton.matches(':hover') && searchResults.style.display === 'block') {
+        searchResults.style.display = 'none';
+    }
+    if(searchbar.matches(':focus') && searchResults.style.display === 'none') {
+        searchResults.style.display = 'block';
+    }
+
+}
+
+
+
 
 export function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

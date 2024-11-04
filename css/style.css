@@ -62,6 +62,7 @@ ul {
 }
 #game_info_wrapper{
     display: flex;
+    flex-wrap: wrap;
 }
 #game_info_wrapper h2 {
     margin: 0.5em 1em 0.5em 1em
@@ -184,7 +185,11 @@ p.bb_paragraph {
   #minimum-requirements ul li, #recommended-requirements ul li {
     margin-bottom: 5px;
   }
-  
+  .search-container {
+    display: flex;
+    justify-content: flex-start;
+    flex:1;
+  }
 #game-info {
     color: white;
     text-align: center;
@@ -212,6 +217,10 @@ p.bb_paragraph {
     margin: 1em;
     border-radius: 12px;
     width: 75%;
+}
+#cat-gen-section , #dev-pub-section{
+    flex:1;
+    
 }
 #dev-pub-section {
     display: flex;
@@ -285,13 +294,46 @@ ul.category-list {
     top: 0;
     z-index: 20;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .navbar h1 {
     font-size: 200%;
     padding-left: 1em;
 
+}
+#form-search {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+.searchbar {
+    margin: 0.5em 0em 0.5em 0.5em;
+    padding: 1em;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    flex: 2;
+    min-width: 20em;
+    max-width: 25em;
+}
+#filterBar {
+    max-width: 95%;
+}
+#searchsubmit {
+    display: inline-flex;
+    padding: 1em 1em 1.1em 1em;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 0.5em;
+    margin-left: -1em;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
 }
  
 .navbar a {
@@ -323,10 +365,22 @@ ul.category-list {
 }
 @media screen and ( max-width: 505px) {
     nav {
+        
         flex-direction: column !important;
     }
+    
 }
+@media screen and (max-width: 505px) and (min-width: 450px) {
+    .navbar.responsive .icon {
+        padding: 0 1em 0 1em !important;
+    }
+    .searchbar {
+        min-width: 20em !important;
+    }
+}
+
 /* Responsive navbar for small screens */
+
 @media screen  and (max-width: 765px) {
     .navbar a {
         display: none;
@@ -339,12 +393,26 @@ ul.category-list {
         padding-left: 1em;
 
     }
+    .searchbar {
+        margin-right: 1em;
+        flex: 100%;
+        min-width: 13em;
+        margin-left: 1em;
+    }
+    .platform_requirements {
+        flex-direction: column !important;
+        
+    }
+    #recommended-requirements, #minimum-requirements {
+        
+        width: 100%;
+    }
 
     .navbar a.icon {
         float: right;
         display: flex;
         align-items: center;
-        padding: 0 1em;
+        padding: 0 0em 0 1em;
         margin: 5px 5px;
 
     }
@@ -359,7 +427,7 @@ ul.category-list {
     .navbar.responsive .icon {
         display: flex;
         align-items: center;
-        padding: 0 1em;
+        padding: 0 0em 0 1em;
         margin: 5px 5px;
 
     }
@@ -520,12 +588,47 @@ ul.category-list {
     margin-left: 12%;
    
 }
+.search-container {
+    position: relative;
+}
+.search-container a {
+    display: block;
+}
+
+#search-results {
+    position: absolute;
+    top: calc(100% + -1.1em);
+    left: 1em;
+    background: linear-gradient(to right, #385c85, #233555);
+    color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0em 0em 1em 1em;
+    margin: 0;
+}
+
+#search-results a {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#search-results li:hover {
+    background: linear-gradient(to right, #416c9c, #2d446d);
+    border-radius: 1em;
+}
+
+
 /* Example of Inheritance */
 .top-sellers-item a, .new-releases-item a {
     text-decoration: none;
     color: inherit; /* Inherit color from parent Instead of global a color:gray */
     
     
+}
+#search-results {
+    display: none;
+    list-style-type: none;
+    padding: 0;
 }
 
 .top-sellers-item header, .top-sellers-item footer,
@@ -551,6 +654,9 @@ ul.category-list {
     }
     .bb_paragraph {
         padding: 0px 0em !important;
+    }
+    .searchbar {
+        flex: 30%;
     }
 
 }
@@ -584,9 +690,7 @@ ul.category-list {
         display: flex;
         flex-wrap: wrap;
     }
-    #language_table {
-        width: 100% !important; /* Adjusted to be full width */
-    }
+   
     #cat-gen-section , #dev-pub-section{
         flex:1;
         
@@ -804,7 +908,7 @@ ul.category-list {
   
  /* Languages Table */
 #language_table {
-    width: 50%; /* Adjusted to be narrower */
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;

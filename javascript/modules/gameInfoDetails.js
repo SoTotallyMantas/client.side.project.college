@@ -9,15 +9,17 @@ export function getGameInfoQuery() {
 async function fetchGameInfo(appid) {
 
     try {
-         const apiRequestUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiSteamGetAppDetails + appid)}`;
-         const response = await fetch(apiRequestUrl);
+         //const apiRequestUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiSteamGetAppDetails + appid)}`;
+         //const response = await fetch(apiRequestUrl);
+         const response = await fetch("https://localhost:8081/steamApi/GameDetails?appID="+appid);
 
          if (!response.ok) {
              throw new Error(`HTTP error, status =  ${response.status}`);
          }
 
             const data = await response.json();
-            const gameInfo = JSON.parse(data.contents);
+            //const gameInfo = JSON.parse(data.contents);
+            const gameInfo =  data;
             displayGameInfo(gameInfo[appid]?.data);
     } catch (error) {
         console.error('Error:', error);
