@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,user_scalable=yes">
+    <title>About</title>
+    <link rel="stylesheet" href="../css/normalizer.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar" id="Mainnavbar">
+            <h1>Games Catalog</h1>
+            <a href="javascript:void(0);" class="icon" onclick="navbarMobile()" id="bar">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="search-container">
+                <form id="form-search" onsubmit="return false;" autocomplete="off">
+                    <input type="text" class="searchbar" id="searchbar-nav" placeholder="Search.." name="search" onkeyup="FilterSearch()">
+                    <button type="submit" id="searchsubmit" title="Search" onclick="FilterSearch()"><i class="fa fa-search"></i></button>
+                    <ul id="search-results"></ul>
+                </form>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="Games.html" >Games</a>
+                <a href="About.html" >About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="schema.html" class="active">Schema</a>
+                
+            </nav>
+        </div>
+    </header>
+    
+        <div class=ContentWrapper>
+            <section class="MainColumn" id="Schema">
+
+                <div id="page-schema">
+                    <h1 id="page-h1"> " < body > " </h1>
+                   <div id="header-schema">
+                     <h1> " < header> "</h1>
+                        <div id="navbar-schema">
+                            <h1> "< navbar class=navbar id="Mainnavbar" >"</h1>
+                            <div id="searchbar-schema">
+                                <h1> "< div id="searchbar >" </h1>
+                            </div>
+                            <div id="nav-schema"> 
+                                <h1> "< nav >" </h1>
+                            </div>
+                        </div>
+                   </div>
+                   <div id="Content-schema">
+                    <h1> "< div id="ContentWrapper"> "</h1>
+                   <div id="MainColumn-schmema"> 
+                        <h1> "< section id="MainColumn" > "</h1>
+                        <div id="top-sellers-schema">
+                            <h1> "< div id="top-sellers" >"</h1>
+                        </div>
+                   </div>
+                   <div id="SideColumn-schema">
+                        <h1> "< section id="SideColumn" > "</h1>
+                        <div id="new-releases-schema">
+                            <h1> "< div id="new-releases" >"</h1>
+                        </div>
+                   </div>
+                   </div>
+                   <div id="footer-schema">
+                        <h1> " < footer >"</h1>
+                        <div id="div-footer-schema">
+                            <h1> " < div id="footer-content" >"</h1>
+                        </div>
+                   </div>
+                </div>
+                   
+            </section>
+            <section class="SideColumn">
+                <div class="new-releases">
+                    <h2>New Releases</h2>
+
+                </div>
+
+            </section>
+
+
+           
+
+
+        </div>
+
+
+    </div>
+    
+        <footer>
+            <div class="footer-content">
+                <p>Games Catalog &copy; 2024</p>
+            </div>
+        </footer>
+
+</body>
+
+<script type="module" src="../javascript/schema.js"></script>
+</html>
