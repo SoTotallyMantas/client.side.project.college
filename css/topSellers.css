@@ -1,0 +1,102 @@
+
+.top-sellers{
+
+    display: flex;
+    padding-bottom: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+
+.topSellers-image {
+    
+    border-radius: 12px;
+    max-width: 100%;
+}
+* Top Sellers & New Releases Items */
+/* Example of Inheritance */
+.top-sellers-item {
+    position: relative;
+    display: flex;
+    vertical-align: top;
+    width: 50%;
+    justify-content: center;
+    color:white ; /* set color for children Instead of global a color:gray */
+}
+
+.top-sellers-item {
+    padding: 1em;
+    margin-top: 25px;
+   
+}
+.top-sellers h2 {
+    margin-top: 0.5em;
+    margin-left: 0em !important;
+    text-align: center; 
+}
+
+/* Example of Inheritance */
+.top-sellers-item a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent Instead of global a color:gray */
+    
+    
+}
+
+
+.top-sellers-item header, .top-sellers-item footer{
+    padding-left: 15px;
+    
+}
+@media only screen and (min-width: 1440px) {
+    .top-sellers-item {
+        width: 33%; 
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    .top-sellers-item {
+        width: 33%; 
+    }
+}
+@media screen and (max-width: 765px) {
+     /* Stack items vertically */
+    .top-sellers-item {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Align items to the center */
+        margin: 10px 0;
+    }
+
+    /* Image size adjustments for mobile */
+    .topSellers-image {
+        max-width: 100%;
+        margin-left: 0;
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 1275px) and (min-width: 765px) {
+   
+
+.top-sellers-item{
+        
+    margin-bottom: 20px;
+    padding:1em;
+    display: flex;
+    justify-content: center; 
+    
+}
+.top-sellers-item header, .top-sellers-item footer{
+    font-size: x-large;
+    
+}
+
+
+.topSellers-image{
+    max-width: 100%;
+    margin-left: 0;
+    
+    
+}
+}

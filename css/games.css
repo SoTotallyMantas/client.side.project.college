@@ -1,0 +1,64 @@
+#game-list {
+
+    color:white;
+    display: flex;
+    padding: 1em;
+    margin: 1em;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #1e2c47);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141e30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        flex-wrap: wrap;
+}
+#game-list h2 {
+    margin: 0.5em 1em;
+}
+#filterBar {
+    max-width: 95%;
+}
+#appsTable {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    height: 95%;
+    width: 95%;
+    
+   
+  }
+
+  #appsTable tr:hover {
+    background-color: #2a475e; 
+}
+#appsTable tr {
+    margin: 0.25em;
+    padding: 0.25em;
+    display: flex;
+    flex-direction: column;
+}
+
+  #appsTable th, td {
+    
+    border: 1px solid black;
+   
+    background: linear-gradient(to right, #385c85, #233555);
+    padding: 1em;
+    text-align: left;
+  }
+ 
+  #appsTable th {
+    background-color: #f2f2f2;
+  }
+  #appsTable a {
+    text-decoration: none;
+    font-size: 25px;
+    color:inherit;
+  }
+  #appsTable a:hover {
+    text-decoration: underline;
+  }
+@media screen  and (max-width: 765px) {
+    #game-list {
+        padding:0 !important;
+        margin: 0 !important;
+    }
+}

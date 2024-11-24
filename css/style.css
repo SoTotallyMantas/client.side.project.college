@@ -185,11 +185,7 @@ p.bb_paragraph {
   #minimum-requirements ul li, #recommended-requirements ul li {
     margin-bottom: 5px;
   }
-  .search-container {
-    display: flex;
-    justify-content: flex-start;
-    flex:1;
-  }
+ 
 #game-info {
     color: white;
     text-align: center;
@@ -282,123 +278,26 @@ ul.category-list {
 
 
 
-/* Navbar Styles */
-.navbar {
-    color: #dcdedf;
-    display: flex;
-    align-items: center;
-    padding: 13px 8px;
-    text-align: center;
-    background-color: #171d25;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+
+#Mainnavbar-schema {
+    background: yellow;
+    color: black;
 }
 
-.navbar h1 {
-    font-size: 200%;
-    padding-left: 1em;
 
-}
-#form-search {
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-}
-.searchbar {
-    margin: 0.5em 0em 0.5em 0.5em;
-    padding: 1em;
-    width: 50%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 16px;
-    flex: 2;
-    min-width: 20em;
-    max-width: 25em;
-}
-#filterBar {
-    max-width: 95%;
-}
-#searchsubmit {
-    display: inline-flex;
-    padding: 1em 1em 1.1em 1em;
-    margin-top: 8px;
-    margin-right: 16px;
-    margin-bottom: 0.5em;
-    margin-left: -1em;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
+
+
+
  
-.navbar a {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    display: inline-block;
-    color: #dcdedf ; 
-    padding: 0px 18px;
-    font-size: 150%;
-    text-decoration: none;
-    margin: 5px;
-    text-align: center;
-}
 
-.navbar a:hover {
-    color: azure  ;
-}
 
-.navbar a.active {
-    
-    color: #1a9fff  ;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-}
 
-.navbar .icon {
-    display: none;
-}
-@media screen and ( max-width: 505px) {
-    nav {
-        
-        flex-direction: column !important;
-    }
-    
-}
-@media screen and (max-width: 505px) and (min-width: 450px) {
-    .navbar.responsive .icon {
-        padding: 0 1em 0 1em !important;
-    }
-    .searchbar {
-        min-width: 20em !important;
-    }
-}
 
-/* Responsive navbar for small screens */
 
 @media screen  and (max-width: 765px) {
-    .navbar a {
-        display: none;
-    }
-    nav {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-left: 1em;
-
-    }
-    .searchbar {
-        margin-right: 1em;
-        flex: 100%;
-        min-width: 13em;
-        margin-left: 1em;
-    }
+    
+    
     .platform_requirements {
         flex-direction: column !important;
         
@@ -408,40 +307,9 @@ ul.category-list {
         width: 100%;
     }
 
-    .navbar a.icon {
-        float: right;
-        display: flex;
-        align-items: center;
-        padding: 0 0em 0 1em;
-        margin: 5px 5px;
+    
 
-    }
-    .navbar{
-        justify-content:unset;
-    }
-
-    .navbar.responsive {
-        position: relative;
-    }
-
-    .navbar.responsive .icon {
-        display: flex;
-        align-items: center;
-        padding: 0 0em 0 1em;
-        margin: 5px 5px;
-
-    }
-
-    .navbar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    #game-list {
-        padding:0 !important;
-        margin: 0 !important;
-    }
+   
     #About {
         margin: 0 !important;
         border-radius: 0 !important;
@@ -486,32 +354,7 @@ ul.category-list {
 
 }
 
-/* Super small screens */
-@media screen and (max-width: 360px) {
-    .navbar{
-        justify-content:unset;
-    }
 
-   
-    .navbar.responsive .icon
-    {
-        padding: 0 0px;
-        margin: 5px 5px;
-    }
-    .navbar a {
-        padding: 0;
-        padding-left: 1em;
-    }
-    .navbar a.icon {
-        
-        
-        padding: 0;
-
-    }
-   
-
-    
-}
 
 /* Layout Wrappers */
 
@@ -540,102 +383,14 @@ ul.category-list {
     float: right;
 }
 
-.top-sellers{
-
-    display: flex;
-    padding-bottom: 2em;
-    flex-wrap: wrap;
-  
-}
-.new-releases {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 2em;
-}
 
 
 
-.topSellers-image, .newReleases-image {
-    
-    border-radius: 12px;
-    max-width: 100%;
-}
-
-.newReleases-image {
-    margin-top: 25px;
-    max-width: 150%;
-}
-
-/* Top Sellers & New Releases Items */
-/* Example of Inheritance */
-.top-sellers-item, .new-releases-item {
-    position: relative;
-    display: flex;
-    vertical-align: top;
-    width: 50%;
-    justify-content: center;
-    color:white ; /* set color for children Instead of global a color:gray */
-}
-
-.top-sellers-item {
-    padding: 1em;
-    margin-top: 25px;
-   
-}
-
-.new-releases-item {
-    margin-top: 25px;
-    margin-left: 12%;
-   
-}
-.search-container {
-    position: relative;
-}
-.search-container a {
-    display: block;
-}
-
-#search-results {
-    position: absolute;
-    top: calc(100% + -1.1em);
-    left: 1em;
-    background: linear-gradient(to right, #385c85, #233555);
-    color: white;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0em 0em 1em 1em;
-    margin: 0;
-}
-
-#search-results a {
-    padding: 8px;
-    cursor: pointer;
-}
-
-#search-results li:hover {
-    background: linear-gradient(to right, #416c9c, #2d446d);
-    border-radius: 1em;
-}
 
 
-/* Example of Inheritance */
-.top-sellers-item a, .new-releases-item a {
-    text-decoration: none;
-    color: inherit; /* Inherit color from parent Instead of global a color:gray */
-    
-    
-}
-#search-results {
-    display: none;
-    list-style-type: none;
-    padding: 0;
-}
 
-.top-sellers-item header, .top-sellers-item footer,
-.new-releases-item header, .new-releases-item footer {
-    padding-left: 15px;
-    
-}
+
+/
 .SideColumn .MainColumn, h2 {
     margin-top: 25px;
     margin-left: 12%;
@@ -656,9 +411,7 @@ ul.category-list {
     .bb_paragraph {
         padding: 0px 0em !important;
     }
-    .searchbar {
-        flex: 30%;
-    }
+    
 
 }
 
@@ -674,9 +427,7 @@ ul.category-list {
     .ContentWrapper{
         flex-wrap:wrap;
     }
-    .new-releases h2 {
-        width: 100%;
-    }
+    
     
     .MainColumn {
         width: 100%;
@@ -696,24 +447,9 @@ ul.category-list {
         flex:1;
         
     }
-    .new-releases-item {
-        width: 50%;
-        margin-left: 0;
-    }
+  
 
-    .top-sellers-item, .new-releases-item {
-        
-        margin-bottom: 20px;
-        padding:1em;
-        display: flex;
-        justify-content: center; 
-    }
     
-
-    .topSellers-image, .newReleases-image {
-        max-width: 100%;
-        margin-left: 0;
-    }
 }
 
 /* Small Screen Breakpoints */
@@ -739,36 +475,7 @@ ul.category-list {
         width: 100%;
         margin: auto;
     }
-   
 
-    /* Stack items vertically */
-    .top-sellers-item, .new-releases-item {
-        width: 100%;
-        padding: 0;
-        display: flex;
-        justify-content: center; /* Align items to the center */
-        margin: 10px 0;
-    }
-
-    /* Image size adjustments for mobile */
-    .topSellers-image, .newReleases-image {
-        max-width: 100%;
-        margin-left: 0;
-    }
-
-    
-    
-}
-@media only screen and (min-width: 1440px) {
-    .top-sellers-item {
-        width: 33%; 
-    }
-}
-
-@media only screen and (min-width: 2560px) {
-    .top-sellers-item {
-        width: 33%; 
-    }
 }
 
 .footer-content {
@@ -783,54 +490,9 @@ ul.category-list {
     margin: 3px 0;
     font-size: 18px;
 }
-#game-list {
 
-    color:white;
-    display: flex;
-    padding: 1em;
-    margin: 1em;
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #1e2c47);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141e30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        flex-wrap: wrap;
-}
-#game-list h2 {
-    margin: 0.5em 1em;
-}
 
-/* Table Styles for games List */
 
-#appsTable {
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 20px;
-    height: 95%;
-    width: 95%;
-    
-   
-  }
-
-  #appsTable th, td {
-    
-    border: 1px solid black;
-   
-    background: linear-gradient(to right, #385c85, #233555);
-    padding: 1em;
-    text-align: left;
-  }
- 
-  #appsTable th {
-    background-color: #f2f2f2;
-  }
-  #appsTable a {
-    text-decoration: none;
-    font-size: 25px;
-    color:inherit;
-  }
-  #appsTable a:hover {
-    text-decoration: underline;
-  }
   #About{
     display: flex;
     margin: 1em;
@@ -949,126 +611,13 @@ ul.category-list {
     background-color: #2a475e;
 }
 
-#appsTable tr:hover {
-    background-color: #2a475e; 
-}
-#appsTable tr {
-    margin: 0.25em;
-    padding: 0.25em;
-    display: flex;
-    flex-direction: column;
-}
-#Mainnavbar-schema {
-    background: yellow;
-    color: black;
-}
-#search-container-schema{
-    background:gray
 
-}
-#Schema {
-    width: 100%;
-}
-div#page-schema {
-    display: flex;
-    flex-wrap: wrap;
-    background: yellow;
-    color: black;
-}
+
 #page-h1 {
     padding: 1em;
     margin: 1em;
     text-align: center;
     width: 100%;
 }
-div#header-schema {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    background:white;
-    margin:1em;
-}
-div#navbar-schema {
-    display: flex;
-    flex-wrap: wrap;
-    background: gray;
-    justify-content: space-evenly;
-    margin: 1em;
 
-}
-div#footer-schema {
-    background: white;
-    width: 100%;
-    margin: 1em;
-    text-align: center;
-    padding: 1em;
-}
-div#navbar-schema h1 {
-    
-    margin-right: 3em;
-    width: 100%;
-    
-   
-}
-div#searchbar-schema {
-    background: red;
-    margin: 1em;
-    width: 30%;
-}
-div#nav-schema {
-    background: red;
-    margin:1em;
-    width: 30%;
-}
-div#MainColumn-schmema {
-    background: white;
-    padding: 3em;
-    padding-top: 1em;
-    display: flex;
-    flex-direction: column;
-    /* margin: 0.5em; */
-}
-div#SideColumn-schema {
-    background: white;
-    padding: 3em;
-    padding-top: 1em;
-    display: flex;
-    flex-direction: column;
-    /* margin: 0.5em; */
-}
-div#top-sellers-schema {
-    padding: 1em;
-    background: red;
-}
-div#new-releases-schema {
-    padding: 1em;
-    background: red;
-}
-div#Content-schema {
-    background: gray;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1em;
-    width: 100%;
-    justify-content: space-evenly;
-}
-div#Content-schema h1 {
-    width:100%;
-    text-align: center;
-}
-div#div-footer-schema {
-    background: gray;
-    margin: 1em;
-    padding: 1em;
-}
 
-@media screen and (max-width: 640px) and (min-width: 500px) {
-    
-    nav {
-        flex-direction: column;
-        margin-right: 10em;
-    }
-
-    
-}

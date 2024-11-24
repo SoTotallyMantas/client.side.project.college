@@ -1,0 +1,94 @@
+div#header-schema {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background:white;
+    margin:1em;
+}
+div#navbar-schema {
+    display: flex;
+    flex-wrap: wrap;
+    background: gray;
+    justify-content: space-evenly;
+    margin: 1em;
+
+}
+div#footer-schema {
+    background: white;
+    width: 100%;
+    margin: 1em;
+    text-align: center;
+    padding: 1em;
+}
+div#navbar-schema h1 {
+    
+    margin-right: 3em;
+    width: 100%;
+    
+   
+}
+div#searchbar-schema {
+    background: red;
+    margin: 1em;
+    width: 30%;
+}
+div#nav-schema {
+    background: red;
+    margin:1em;
+    width: 30%;
+}
+div#MainColumn-schmema {
+    background: white;
+    padding: 3em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0.5em; */
+}
+div#SideColumn-schema {
+    background: white;
+    padding: 3em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0.5em; */
+}
+div#top-sellers-schema {
+    padding: 1em;
+    background: red;
+}
+div#new-releases-schema {
+    padding: 1em;
+    background: red;
+}
+div#Content-schema {
+    background: gray;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+    width: 100%;
+    justify-content: space-evenly;
+}
+div#Content-schema h1 {
+    width:100%;
+    text-align: center;
+}
+div#div-footer-schema {
+    background: gray;
+    margin: 1em;
+    padding: 1em;
+}
+#search-container-schema{
+    background:gray
+
+}
+#Schema {
+    width: 100%;
+}
+div#page-schema {
+    display: flex;
+    flex-wrap: wrap;
+    background: yellow;
+    color: black;
+}
