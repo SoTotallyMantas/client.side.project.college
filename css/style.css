@@ -38,7 +38,7 @@ ul {
 
 }
 #game-info {
-    background: #171d25;
+    
     border-radius: 15px;
 }
 #game-info h2 {
@@ -363,24 +363,31 @@ ul.category-list {
     color: white;
     display: flex;
     overflow: hidden;
-    margin: 40px 40px;
+    margin: 5em 40px;
     gap: 20px;
 }
 
+#MainColumn {
+    /*width: 66.67%;
+    float: left; */
+    color:white;
+    border-radius: 0px;
+}
 .MainColumn {
-    width: 66.67%;
-    float: left;
-    background: #171d25;
-    border-radius: 15px;
+    /*width: 66.67%;
+    float: left; */
+    color:white;
+    border-radius: 0px;
 }
 
 
 /* SideColumn adjustments */
-.SideColumn {
+#SideColumn {
     background: #171d25;
-    border-radius: 15px;
-    width: 33.33%;
-    float: right;
+    border-radius: 0px;
+    color:white;
+   /* width: 33.33%;
+    float: right; */
 }
 
 
@@ -456,7 +463,7 @@ ul.category-list {
 @media screen and (max-width: 765px) {
     
     .ContentWrapper {
-        margin: 0;
+        margin: 3.5em 0em 0em 0em;
         gap: 0;
         
     }
@@ -571,6 +578,7 @@ ul.category-list {
   
  /* Languages Table */
 #language_table {
+    background: linear-gradient(to right, #385c85, #233555) !important;
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;

@@ -1,6 +1,7 @@
 /* Navbar Styles */
+
 .navbar {
-    color: #dcdedf;
+    color: #dcdedf !important;
     display: flex;
     align-items: center;
     padding: 13px 8px;
@@ -22,25 +23,25 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     display: inline-block;
-    color: #dcdedf ; 
+    color: #dcdedf; 
     padding: 0px 18px;
     font-size: 150%;
     text-decoration: none;
     margin: 5px;
     text-align: center;
 }
-
+       
 .navbar a:hover {
     color: azure  ;
 }
 
 .navbar a.active {
     
-    color: #1a9fff  ;
+    color: #1a9fff !important  ;
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
-
+/*
 .navbar .icon {
     display: none;
 }
@@ -216,3 +217,4 @@
 
     
 }
+  */

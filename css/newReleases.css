@@ -1,3 +1,4 @@
+/*
 .new-releases {
     display: flex;
     flex-wrap: wrap;
@@ -10,16 +11,18 @@
     vertical-align: top;
     width: 50%;
     justify-content: center;
-    color:white ; /* set color for children Instead of global a color:gray */
+    color:white ; 
 }
+
 .new-releases-item {
     margin-top: 25px;
     margin-left: 12%;
    
 }
+    */
 .new-releases-item a {
     text-decoration: none;
-    color: inherit; /* Inherit color from parent Instead of global a color:gray */
+    color: white;
     
     
 }
@@ -30,11 +33,13 @@
     margin: 0.5em 1em;
 
 }
+
 .new-releases-item header, .new-releases-item footer {
     padding-left: 15px;
     font-size: large;
     
 }
+/*
 .newReleases-image {
     margin-top: 25px;
     max-width: 150%;
@@ -44,6 +49,8 @@ newReleases-image {
     border-radius: 12px;
     max-width: 100%;
 }
+*/
+/*
 @media screen and (max-width: 765px) {
     .newReleases-image {
         max-width: 100%;
@@ -53,7 +60,7 @@ newReleases-image {
         width: 100%;
         padding: 0;
         display: flex;
-        justify-content: center; /* Align items to the center */
+        justify-content: center; 
         margin: 10px 0;
     }
 
@@ -83,3 +90,4 @@ newReleases-image {
         margin-left: 0;
     }
 }
+*/

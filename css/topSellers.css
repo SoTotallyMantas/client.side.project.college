@@ -1,4 +1,4 @@
-
+/*
 .top-sellers{
 
     display: flex;
@@ -13,17 +13,17 @@
     border-radius: 12px;
     max-width: 100%;
 }
-* Top Sellers & New Releases Items */
-/* Example of Inheritance */
+
+
 .top-sellers-item {
     position: relative;
     display: flex;
     vertical-align: top;
     width: 50%;
     justify-content: center;
-    color:white ; /* set color for children Instead of global a color:gray */
+    color:white ; 
 }
-
+*/
 .top-sellers-item {
     padding: 1em;
     margin-top: 25px;
@@ -35,10 +35,10 @@
     text-align: center; 
 }
 
-/* Example of Inheritance */
+
 .top-sellers-item a {
     text-decoration: none;
-    color: inherit; /* Inherit color from parent Instead of global a color:gray */
+    color: white; 
     
     
 }
@@ -48,6 +48,7 @@
     padding-left: 15px;
     
 }
+/*
 @media only screen and (min-width: 1440px) {
     .top-sellers-item {
         width: 33%; 
@@ -60,16 +61,16 @@
     }
 }
 @media screen and (max-width: 765px) {
-     /* Stack items vertically */
+     
     .top-sellers-item {
         width: 100%;
         padding: 0;
         display: flex;
-        justify-content: center; /* Align items to the center */
+        justify-content: center;
         margin: 10px 0;
     }
 
-    /* Image size adjustments for mobile */
+    
     .topSellers-image {
         max-width: 100%;
         margin-left: 0;
@@ -100,3 +101,4 @@
     
 }
 }
+*/

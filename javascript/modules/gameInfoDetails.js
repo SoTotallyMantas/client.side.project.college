@@ -100,6 +100,7 @@ function addGameDetails(gameInfo,container) {
     const img = document.createElement('img');
     img.src = gameInfo.header_image;
     img.id = 'game-image';
+    
     container.appendChild(img);
 
     const description = document.createElement('p');

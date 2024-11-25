@@ -1,0 +1,43 @@
+/* Default behavior for larger screens (above 1024px) */
+#MainColumn {
+    width: 66.666%; /* 8/12 column width */
+    float: left;
+  }
+  
+  #SideColumn {
+    width: 33.333%; /* 4/12 column width */
+    float: left;
+  }
+  
+  /* Behavior for screens 1024px and below */
+  @media (max-width: 1024px) {
+    #MainColumn,
+    #SideColumn {
+      width: 100%; /* Stack both columns full-width */
+      float: none;
+    }
+  
+    #SideColumn {
+      margin-top: 20px; /* Add spacing between columns when stacked */
+    }
+  }
+  /* Default: Multiple columns for larger screens */
+#top-sellers > .row > .top-sellers-item {
+    width: 100%; /* By default, let Bootstrap handle grid */
+  }
+  
+  
+  /* Below 1024px: Single-column layout */
+  @media (max-width: 1024px) {
+    #top-sellers .row {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .top-sellers-item {
+      width: 100%; /* Ensure each item takes the full row width */
+      margin-bottom: 20px; /* Optional: Add spacing between items */
+    }
+  }
+  
+  
