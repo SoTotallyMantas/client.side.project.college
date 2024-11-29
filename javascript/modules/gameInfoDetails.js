@@ -57,6 +57,7 @@ function displayGameInfo(gameInfo) {
     addRequirementsTabs(gameInfo, container);
     const wrapper = document.createElement('div');
     wrapper.setAttribute('id', 'game_info_wrapper');
+    wrapper.className = 'row';
     
     addLanguages(gameInfo, wrapper);
 
@@ -103,7 +104,7 @@ function addGameDetails(gameInfo,container) {
     
     container.appendChild(img);
 
-    const description = document.createElement('p');
+    const description = document.createElement('div');
     description.id = 'detailed_description';
     description.innerHTML = gameInfo.detailed_description;
     container.appendChild(description);
@@ -170,27 +171,35 @@ function setupTabSwitching() {
 }
 
 async function addLanguages(gameInfo, container) {
+    const div = document.createElement('div');
+    div.id = 'language_section';
+    div.className = 'table-responsive flex-fill ';
     const languages = await parseLanguages(gameInfo.supported_languages);
     const table = document.createElement('table');
     table.id = 'language_table';
+    table.className = 'table';
 
     const headers = ['Language', 'Interface', 'Full Audio', 'Subtitles'];
     const thead = table.createTHead();
+    thead.className = '';
     const headerRow = thead.insertRow();
     headers.forEach(text => headerRow.insertCell().textContent = text);
 
     const tbody = table.createTBody();
     languages.forEach(({ name, fullAudio }) => {
         const row = tbody.insertRow();
+        
         [name, '✔', fullAudio ? '✔' : '', '✔'].forEach(text => row.insertCell().textContent = text);
     });
+    div.appendChild(table);
 
-    container.prepend(table);
+    container.prepend(div);
 }
 
 function addDeveloperPublisherInfo(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'dev-pub-section';
+    section.className = 'flex-fill col-sm-3';
 
     const addList = (title, items) => {
         const label = document.createElement('h2');
@@ -199,6 +208,9 @@ function addDeveloperPublisherInfo(gameInfo, container) {
 
         const list = document.createElement('ul');
         list.id = title.toLowerCase()+ '-list';
+        if(title === 'Genres') {
+            list.className = 'd-flex flex-wrap justify-content-center';
+        }
         items.forEach(item => {
             const listItem = document.createElement('li');
             listItem.textContent = item;
@@ -217,6 +229,7 @@ function addDeveloperPublisherInfo(gameInfo, container) {
 async function addCategoriesAndGenres(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'cat-gen-section';
+    section.className = 'flex-fill col-sm-3';
 
     const h2 = document.createElement('h2');
     h2.textContent = 'Categories';

@@ -39,5 +39,41 @@
       margin-bottom: 20px; /* Optional: Add spacing between items */
     }
   }
+
+  p, ul, li, label, button, .navbar a{
+    font-size: calc(1rem + 0.5vw); 
+  }
+  .navbar a {
+    font-size: calc(1rem + 1vw); 
+  }
+  input[type="search"] {
+    font-size: calc(1rem + 0.5vw);
+  }
+  #detailed_description {
+    font-size: calc(1rem + 0.5vw);
+  }
+  a {
+    font-size: calc(1rem + 0.5vw);
+  }
+  #language_table {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+
+  input {
+    font-size: calc(1rem + 0.25vw);
+  }
+  #genres-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Creates responsive grid */
+    gap: 10px; /* Adds space between items */
+    list-style: none; /* Removes default bullets */
+    padding: 0;
+    margin: 0;
+  }
   
-  
+ #genres-list li {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ffffff; /* White text */
+  }

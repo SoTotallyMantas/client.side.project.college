@@ -20,12 +20,12 @@ export async function PopulateTopSellers(parsedData) {
 
             const header = document.createElement('header');
             header.innerText = item.name;
-            header.className="fs-5 fs-md-4 fs-lg-3";
+            header.className="";
             link.appendChild(header);
 
             const footer = document.createElement('footer');
             footer.innerText = (item.final_price / 100 + '€');
-            footer.className="fs-5 fs-md-4 fs-lg-3";
+            footer.className="";
             link.appendChild(footer);
             
             itemDiv.appendChild(link);
@@ -58,12 +58,12 @@ export async function PopulateNewReleases(parsedData) {
 
             const header = document.createElement('header');
             header.innerText = item.name;
-            header.className="fs-5 fs-md-4 fs-lg-3";
+            header.className="";
             link.appendChild(header);
 
             const footer = document.createElement('footer');
             footer.innerText = (item.final_price / 100 + '€');
-            footer.className="fs-5 fs-md-4 fs-lg-3";
+            footer.className="";
             link.appendChild(footer);
             
             itemDiv.appendChild(link);

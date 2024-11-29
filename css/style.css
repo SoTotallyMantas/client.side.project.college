@@ -65,8 +65,9 @@ ul {
     flex-wrap: wrap;
 }
 #game_info_wrapper h2 {
-    margin: 0.5em 1em 0.5em 1em
-
+   /* margin: 0.5em 1em 0.5em 1em; */
+   margin-top:1em;
+    width: 100%;
 }
 .bb_tag
 {
@@ -81,7 +82,7 @@ img.bb_img {
     margin-top: 1em;
     margin-bottom: 1em;
     
-    width: 100%;
+     /* width: 100%; */
 }
 p.bb_paragraph {
     min-height: .15em;
@@ -172,7 +173,7 @@ p.bb_paragraph {
   }
   
   #minimum-requirements h3, #recommended-requirements h3 {
-    font-size: 18px;
+   /* font-size: 18px;   */
     color: #fff;
     margin-bottom: 10px;
   }
@@ -199,8 +200,8 @@ p.bb_paragraph {
     margin: 0.5em 1em 0.5em 1em;
 }
 #game-info, #detailed_description {
-	line-height: 1.5em;
-	font-size: 18px;	
+	/* line-height: 1.5em; */
+	/*font-size: 18px;	 */
 	overflow: hidden;
 	max-width: 100%;
     padding-top: 15px;
@@ -220,11 +221,14 @@ p.bb_paragraph {
 }
 #dev-pub-section {
     display: flex;
-    text-align: left;
+    /* text-align: left; */
     margin: 20px 0px;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: baseline;
     flex-direction: column;
+}
+#dev-pub-section h2 {
+    justify-self: center;
 }
 #dev-pub-section ul {
     padding-inline-start: 1em;
@@ -264,7 +268,7 @@ ul.category-list {
 
 .category-item span {
     color: #ffffff; 
-    font-size: 16px; 
+   /* font-size: 16px;  */
 }
 
 
@@ -495,7 +499,7 @@ ul.category-list {
 
 .footer-content p {
     margin: 3px 0;
-    font-size: 18px;
+   /* font-size: 18px; */
 }
 
 
@@ -504,10 +508,10 @@ ul.category-list {
     display: flex;
     margin: 1em;
     border-radius: 20px;
-    line-height: 1em;
+   /* line-height: 1em; */
     color: white;
     text-align: center;
-    font-size: large;
+   /* font-size: large; */
     background: linear-gradient(to right, #243B55, #141E30);
     flex-wrap: wrap;
     justify-content: space-around;
@@ -542,7 +546,7 @@ ul.category-list {
   
   #contactForm label
   {
-    font-size: large;
+    /*font-size: large; */
     display: block;
     padding: 1em;
     font-weight: bold;
@@ -560,7 +564,7 @@ ul.category-list {
 }
   
   
-  input[type=submit] {
+  .button-custom {
     margin-left: 20px;
     margin-bottom: 20px;
     background: linear-gradient(to right, #47688e, #3f5d94);
@@ -572,7 +576,7 @@ ul.category-list {
   }
   
   
-  input[type=submit]:hover {
+  .button-custom:hover {
     background: linear-gradient(to right, #567eac, #5075bb);
   }
   
@@ -583,7 +587,7 @@ ul.category-list {
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    /*font-size: 14px; */
     background-color: #1b2838; 
     color: #c7d5e0; 
 }
@@ -602,7 +606,7 @@ ul.category-list {
 }
 
 #language_table td.checkmark {
-    font-size: 1.5em;
+  /*  font-size: 1.5em; */
     color: #4caf50;
 }
 
@@ -611,7 +615,7 @@ ul.category-list {
 }
 
 .checkmark {
-    font-size: 1.4em;
+    /* font-size: 1.4em; */
     color: #4caf50;
 }
 
