@@ -7,7 +7,7 @@ export async function PopulateTopSellers(parsedData) {
     topSellers.forEach(item => {
         if (item.name !== 'Steam Deck') {
             const itemDiv = document.createElement('div');
-            itemDiv.className = 'top-sellers-item p-2 col-12 col-md-6 d-flex justify-content-center';
+            itemDiv.className = 'top-sellers-item p-2 col-12 col-md-6 col-lg-6 d-flex justify-content-center dynamic-element';
 
             const link = document.createElement('a');
             link.href = `html/gameInfo.html?appid=${item.id}`;
@@ -30,6 +30,9 @@ export async function PopulateTopSellers(parsedData) {
             
             itemDiv.appendChild(link);
             container.appendChild(itemDiv);
+            setTimeout(() => {
+                itemDiv.classList.add('visible');
+            }, 10);
         }
     });
 }
@@ -43,7 +46,7 @@ export async function PopulateNewReleases(parsedData) {
     newReleases.forEach(item => {
         if (item.name !== 'Steam Deck' && container.childElementCount < 6) {
             const itemDiv = document.createElement('div');
-            itemDiv.className = 'new-releases-item p-2 ';
+            itemDiv.className = 'new-releases-item p-2 col-12 col-md-6 col-lg-12 d-flex justify-content-center dynamic-element';
 
             const link = document.createElement('a');
             link.href = currentPath === '' || currentPath === 'index.html' 
@@ -68,6 +71,9 @@ export async function PopulateNewReleases(parsedData) {
             
             itemDiv.appendChild(link);
             container.appendChild(itemDiv);
+            setTimeout(() => {
+                itemDiv.classList.add('visible');
+            }, 10);
         }
     });
 }

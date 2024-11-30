@@ -1,7 +1,8 @@
 import { corsProxyCategories } from './apiConfig.js';
 import { PopulateTopSellers, PopulateNewReleases } from './populateCategories.js';
-
+import { showSpinner, hideSpinner } from './spinner.js';
 export async function fetchFeaturedCategories() {
+    showSpinner(spinner);
     let response = await GetStaticData();
     try {
         // const response = await fetch(corsProxyCategories);
@@ -19,6 +20,8 @@ export async function fetchFeaturedCategories() {
         const parsedData = data;
         PopulateTopSellers(parsedData);
         PopulateNewReleases(parsedData);
+        hideSpinner(spinner);
+
     }
 }
 

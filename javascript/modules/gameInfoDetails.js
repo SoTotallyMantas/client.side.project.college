@@ -1,12 +1,16 @@
 import { apiSteamGetAppDetails } from './apiConfig.js';
+import { hideSpinner, showSpinner } from './spinner.js';
 import { parseLanguages, parseCategoriesImageLinksToDictionary, capitalize } from './utils.js';
 
 export function getGameInfoQuery() {
     const appid = new URLSearchParams(window.location.search).get('appid');
+    
     fetchGameInfo(appid);
+    
 }
 
 async function fetchGameInfo(appid) {
+    showSpinner('spinnerGameInfo');
     let response = await GetStaticData(appid);
     let Flag = false;
     try {
@@ -35,7 +39,9 @@ async function fetchGameInfo(appid) {
             {
                 gameInfo =  data.find(obj => obj.hasOwnProperty(appid));
             }
+            
            displayGameInfo(gameInfo[appid]?.data);
+            hideSpinner('spinnerGameInfo');
     }
 }
 
@@ -52,13 +58,14 @@ function displayGameInfo(gameInfo) {
     }
 
     const container = document.getElementById('game-info');
+    container.classList.add('dynamic-element');
     handleAgeRestriction(gameInfo.ratings, container);
     
     addGameDetails(gameInfo, container);
     addRequirementsTabs(gameInfo, container);
     const wrapper = document.createElement('div');
     wrapper.setAttribute('id', 'game_info_wrapper');
-    wrapper.className = 'row';
+    wrapper.className = 'row ';
     
     addLanguages(gameInfo, wrapper);
 
@@ -68,8 +75,11 @@ function displayGameInfo(gameInfo) {
 
     
     container.appendChild(wrapper);
+    setTimeout(() => {
+        container.classList.add('visible');
+    }, 10);
 
-
+   
 
 }
 
@@ -115,11 +125,16 @@ function addGameDetails(gameInfo,container) {
 
 function addRequirementsTabs(gameInfo, container) {
     const requirementsPlatform = document.getElementById('requirements');
+    requirementsPlatform.classList.add('dynamic-element');
     const tabsContainer = createTabs(gameInfo.platforms);
     const requirementsContent = createRequirementsContent(gameInfo);
 
     requirementsPlatform.append(tabsContainer, requirementsContent);
     setupTabSwitching();
+
+    setTimeout(() => {
+        requirementsPlatform.classList.add('visible');
+    }, 10);
 }
 
 function createTabs(platforms) {
@@ -165,10 +180,14 @@ function createRequirementsContent(gameInfo) {
 function setupTabSwitching() {
     document.querySelectorAll('.platform_tab').forEach(tab => {
         tab.addEventListener('click', function () {
-            document.querySelectorAll('.platform_tab, .platform_requirements').forEach(elem => elem.classList.remove('active'));
-            this.classList.add('active');
-            document.getElementById(this.id.replace('platform-', 'requirements-')).classList.add('active');
+            document.querySelectorAll('.platform_tab, .platform_requirements').forEach(elem => elem.classList.remove('active','requirements-animated','custom-button-click')	
+        );
+            this.classList.add('active','custom-button-click');
+            document.getElementById(this.id.replace('platform-', 'requirements-')).classList.add('active', 'requirements-animated');
+           
+           
         });
+        
     });
     document.querySelector('.platform_tab')?.click();
 }

@@ -27,18 +27,6 @@
   }
   
   
-  /* Below 1024px: Single-column layout */
-  @media (max-width: 1024px) {
-    #top-sellers .row {
-      display: flex;
-      flex-direction: column; /* Stack items vertically */
-    }
-  
-    .top-sellers-item {
-      width: 100%; /* Ensure each item takes the full row width */
-      margin-bottom: 20px; /* Optional: Add spacing between items */
-    }
-  }
 
   p, ul, li, label, button, .navbar a{
     font-size: calc(1rem + 0.5vw); 
@@ -87,3 +75,84 @@
   .ratio img {
     object-fit: cover;
   }
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #000;
+  }
+
+  /* Animations  */
+  body {
+    opacity: 0;
+    
+}
+
+body.loaded {
+  animation: fadeIn 1s ease-in-out; 
+    opacity: 1;
+}
+
+
+.dynamic-element {
+  opacity: 0;
+  
+}
+
+.dynamic-element.visible {
+  animation: fadeIn 2s ease-in-out;
+  opacity: 1;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  display: none;  
+  margin: 50px auto;
+}
+
+.requirements-animated {
+  animation:  blink-smooth 1s ease-in-out;
+}
+.custom-button-click {
+  animation: button-click 0.3s ease-in-out;
+}
+
+.requirements_content {
+  transition: max-height 0.5s ease-in-out;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink-smooth {
+  0% {
+    color: white; 
+  }
+  50% {
+    color: transparent; 
+  }
+  100% {
+    color: white; 
+  }
+  
+}
+
+@keyframes button-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95); /* Slightly shrink the button */
+  }
+  100% {
+    transform: scale(1); /* Return to original size */
+  }
+}
