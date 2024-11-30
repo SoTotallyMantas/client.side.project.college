@@ -23,6 +23,15 @@ export async function fetchFeaturedCategories() {
 }
 
 function GetStaticData() {
-    const data = fetch('../CategoriesStatic.json');
-    return data;
+    // if 1270.0.1
+    if(window.location.hostname === "127.0.0.1") {
+        return fetch('../CategoriesStatic.json');
+    }
+    else {
+        return fetch('/CategoriesStatic.json');
+    }
+   
+   
+
+    
 }
