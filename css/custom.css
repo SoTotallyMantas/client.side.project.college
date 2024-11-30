@@ -58,6 +58,12 @@
   #language_table {
     font-size: calc(1rem + 0.5vw);
   }
+  #new-releases, header, footer {
+    font-size: calc(1rem + 0.5vw);
+  }
+  #new-releases, header, footer {
+    font-size: calc(1rem + 0.5vw);
+  }
 
 
   input {
@@ -76,4 +82,8 @@
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff; /* White text */
+  }
+
+  .ratio img {
+    object-fit: cover;
   }

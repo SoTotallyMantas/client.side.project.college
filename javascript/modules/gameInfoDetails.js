@@ -53,6 +53,7 @@ function displayGameInfo(gameInfo) {
 
     const container = document.getElementById('game-info');
     handleAgeRestriction(gameInfo.ratings, container);
+    
     addGameDetails(gameInfo, container);
     addRequirementsTabs(gameInfo, container);
     const wrapper = document.createElement('div');
@@ -103,10 +104,12 @@ function addGameDetails(gameInfo,container) {
     img.id = 'game-image';
     
     container.appendChild(img);
-
+    addCarousel(gameInfo, container);
     const description = document.createElement('div');
+    
     description.id = 'detailed_description';
     description.innerHTML = gameInfo.detailed_description;
+    
     container.appendChild(description);
 }
 
@@ -195,7 +198,48 @@ async function addLanguages(gameInfo, container) {
 
     container.prepend(div);
 }
+function addCarousel(gameInfo, container) {
+    const carousel = document.createElement('div');
+    carousel.id = 'carouselImages';
+    carousel.className = 'carousel slide';
+    
+    const carouselInner = document.createElement('div');
+    carouselInner.className = 'carousel-inner ';
+    carouselInner.id = 'carouselInnerImages';
 
+    gameInfo.screenshots.forEach((screenshot, index) => {
+        const item = document.createElement('div');
+        item.className = `carousel-item ${index === 0 ? 'active' : ''} ratio ratio-16x9 `;
+
+        const img = document.createElement('img');
+        img.src = screenshot.path_full;
+        img.className = 'd-block  w-100 ';
+        img.alt = 'screenshot';
+        item.appendChild(img);
+
+        carouselInner.appendChild(item);
+    });
+
+    const prevButton = document.createElement('button');
+    prevButton.className = 'carousel-control-prev';
+    prevButton.type = 'button';
+    prevButton.setAttribute('data-bs-target', '#carouselImages');
+    prevButton.setAttribute('data-bs-slide', 'prev');
+    prevButton.innerHTML = '<span class="carousel-control-prev-icon" aria-hidden="true"> </span><span class="visually-hidden">Previous</span>';
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'carousel-control-next';
+    nextButton.type = 'button';
+    nextButton.setAttribute('data-bs-target', '#carouselImages');
+    nextButton.setAttribute('data-bs-slide', 'next');
+    nextButton.innerHTML = '<span class="carousel-control-next-icon" aria-hidden="true"> </span><span class="visually-hidden">Next</span>';
+
+    carousel.appendChild(prevButton);
+    carousel.appendChild(nextButton);
+    carousel.appendChild(carouselInner);
+    container.appendChild(carousel);
+
+};
 function addDeveloperPublisherInfo(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'dev-pub-section';
