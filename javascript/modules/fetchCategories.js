@@ -28,7 +28,7 @@ function GetStaticData() {
         return fetch('../CategoriesStatic.json');
     }
     else {
-        return fetch('/CategoriesStatic.json');
+        return fetch('CategoriesStatic.json');
     }
    
    
