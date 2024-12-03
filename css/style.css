@@ -7,12 +7,12 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #1b2838;
+   /* background: #1b2838; */
     margin: 0;
 }
 a {
 
-    color: gray;
+  
 }
 img {
     max-width: 100%;
@@ -57,7 +57,10 @@ ul {
 #supported_languages , #detailed_description, #dev-pub-section, #cat-gen-section  {
     margin: 5px;
     
-    background: linear-gradient(to right, #385c85, #233555);
+  /*  background: linear-gradient(to right, #385c85, #233555); */
+    border-radius: 15px;
+    padding: 1em;
+    /* color: white; */
 
 }
 #game_info_wrapper{
@@ -105,17 +108,17 @@ p.bb_paragraph {
     padding: 10px 20px;
     cursor: pointer;
     
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+ /*   background: -webkit-linear-gradient(to right, #243B55, #141E30);   Chrome 10-25, Safari 5.1-6 */
+  /*  background: linear-gradient(to right, #243B55, #141E30);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     border-radius: 15px;
   }
   
   .platform_tab:hover {
-    background: #395486;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #406997, #364f80);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #385c85, #233555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+     background: -webkit-linear-gradient(to right, #406997, #364f80);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #385c85, #233555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
   .platform_tab.active {
@@ -174,7 +177,7 @@ p.bb_paragraph {
   
   #minimum-requirements h3, #recommended-requirements h3 {
    /* font-size: 18px;   */
-    color: #fff;
+   /* color: #fff; */
     margin-bottom: 10px;
   }
   
@@ -188,11 +191,11 @@ p.bb_paragraph {
   }
  
 #game-info {
-    color: white;
+   /*  color: white;    */
     text-align: center;
 }
 #requirements{
-    color: inherit;
+  /*  color: inherit; */
     text-align: left;
 
 }
@@ -267,7 +270,7 @@ ul.category-list {
 }
 
 .category-item span {
-    color: #ffffff; 
+   /* color: #ffffff;  */
    /* font-size: 16px;  */
 }
 
@@ -364,7 +367,7 @@ ul.category-list {
 
 
 .ContentWrapper {
-    color: white;
+  /*  color: white; */
     display: flex;
     overflow: hidden;
     margin: 5em 40px;
@@ -374,22 +377,24 @@ ul.category-list {
 #MainColumn {
     /*width: 66.67%;
     float: left; */
-    color:white;
+   /* color:white; */
     border-radius: 0px;
 }
 .MainColumn {
     /*width: 66.67%;
     float: left; */
-    color:white;
+  /*   color:white; */
     border-radius: 0px;
 }
 
 
 /* SideColumn adjustments */
 #SideColumn {
-    background: #171d25;
+    /*background: #171d25; */
     border-radius: 0px;
-    color:white;
+   /* color:white; */
+    /* width: 33.33%;
+    float: right; */
    /* width: 33.33%;
     float: right; */
 }
@@ -490,11 +495,11 @@ ul.category-list {
 }
 
 .footer-content {
-    background-color: #171d25;
+    /* background-color: #171d25; */
     padding: 10px 0;
     bottom: 0;
     text-align: center;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 .footer-content p {
@@ -509,10 +514,10 @@ ul.category-list {
     margin: 1em;
     border-radius: 20px;
    /* line-height: 1em; */
-    color: white;
+   /* color: white; */
     text-align: center;
-   /* font-size: large; */
-    background: linear-gradient(to right, #243B55, #141E30);
+   /* font-size: large; */ 
+   /* background: linear-gradient(to right, #243B55, #141E30); */
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2em 10% 1em 10%;
@@ -533,8 +538,8 @@ ul.category-list {
   {
     display: flex;
     margin: 2em;
-    background: linear-gradient(to right, #243B55, #141E30);
-    color: white;
+   /* background: linear-gradient(to right, #243B55, #141E30); */
+   /* color: white;  */
     flex-direction: column;
     flex-wrap: wrap;
     }
@@ -582,7 +587,7 @@ ul.category-list {
   
  /* Languages Table */
 #language_table {
-    background: linear-gradient(to right, #385c85, #233555) !important;
+  /*   background: linear-gradient(to right, #385c85, #233555) !important; */
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;

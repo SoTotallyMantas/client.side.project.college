@@ -28,10 +28,18 @@
   
   
 
-  p, ul, li, label, button, .navbar a{
+  p, ul, li, label, button, .navbar a, h2{
     font-size: calc(1rem + 0.5vw); 
   }
-  .navbar a {
+  .dropdown-item {
+    --bs-dropdown-link-active-color: none !important; 
+    --bs-dropdown-link-active-bg: none !important;
+  }
+  #restore-Default {
+    font-size: calc(1rem + 0.5vw);
+    width: 100%;
+  }
+  .navbar a, #buttonSettings {
     font-size: calc(1rem + 1vw); 
   }
   input[type="search"] {
@@ -42,6 +50,7 @@
   }
   a {
     font-size: calc(1rem + 0.5vw);
+    color: rgba(var(--bs-body-color));
   }
   #language_table {
     font-size: calc(1rem + 0.5vw);
@@ -52,11 +61,16 @@
   #new-releases, header, footer {
     font-size: calc(1rem + 0.5vw);
   }
+   
+  .bd-title {
+    color: --bs-heading-color: var(--bs-emphasis-color);
+  }
 
 
   input {
     font-size: calc(1rem + 0.25vw);
   }
+    
   #genres-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Creates responsive grid */
@@ -69,7 +83,7 @@
  #genres-list li {
     text-align: center;
     font-size: 1.2rem;
-    color: #ffffff; /* White text */
+    /* color: #ffffff;  */
   }
 
   .ratio img {
@@ -78,7 +92,55 @@
   .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #000;
   }
+  .bd-navbar {
+    padding: .75rem 0;
+    background-color: transparent;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+  .highlight {
+    background: var(--highlight-color) !important;
+  }
+  .highlight-border-color {
+    border-color: var(--bs-dark-border-subtle) !important;
+  }
+  .nav-item, .navbar-brand {
+    color: #dcdedf ;
 
+  }
+  #theme {
+    color: var(--bs-dropdown-link-hover-color) !important;
+
+  }
+  #buttonSettings {
+    background: none;
+    border:none;
+    height: 100%;
+    padding: 0;
+  }
+  [data-bs-theme=dark] {
+
+    --highlight-color:  #212529;
+  }
+  [data-bs-theme=light] {
+    --highlight-color:  #f8f9fa;
+  }
+  .btn-success {
+    --bs-btn-hover-bg: #21d27f;
+  }
+  .navbar-button:hover {
+    color: black;
+  }
+ 
+  @media screen and (max-width: 1024px) {
+    
+    .border-start
+    {
+    border-left: none !important;
+    }
+    .highlight-border-responsive {
+      border: none !important;
+    }
+  }
   /* Animations  */
   body {
     opacity: 0;
@@ -134,13 +196,13 @@ body.loaded {
 
 @keyframes blink-smooth {
   0% {
-    color: white; 
+    color: rgba(var(--bs-body-color));
   }
   50% {
     color: transparent; 
   }
   100% {
-    color: white; 
+    color: rgba(var(--bs-body-color));
   }
   
 }

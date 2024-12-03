@@ -1,12 +1,12 @@
 /* Navbar Styles */
 
 .navbar {
-    color: #dcdedf !important;
+   /*  color: #dcdedf !important; */
     display: flex;
     align-items: center;
     padding: 13px 8px;
     text-align: center;
-    background-color: #171d25;
+    background: linear-gradient(to right, #325b89, #365f8d);
     position: sticky;
     top: 0;
     z-index: 20;
@@ -18,12 +18,13 @@
     padding-left: 1em;
 
 }
+
 .navbar a {
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     display: inline-block;
-    color: #dcdedf; 
+    /* color: #dcdedf;  */
     padding: 0px 18px;
     
     text-decoration: none;
@@ -32,7 +33,7 @@
 }
        
 .navbar a:hover {
-    color: azure  ;
+    color: azure ;
 }
 
 .navbar a.active {
@@ -40,6 +41,9 @@
     color: #1a9fff !important  ;
     text-decoration: underline;
     text-decoration-thickness: 3px;
+}
+.navbar a.active:hover {
+    color: azure !important;
 }
 /*
 .navbar .icon {

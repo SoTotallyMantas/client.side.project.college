@@ -24,10 +24,7 @@
     color:white ; 
 }
 */
-.top-sellers-item {
-    padding: 1em;
-    margin-top: 25px;
-   
+
 }
 .top-sellers h2 {
     margin-top: 0.5em;
@@ -38,7 +35,7 @@
 
 .top-sellers-item a {
     text-decoration: none;
-    color: white; 
+  /*  color: white;  */
     
     
 }
