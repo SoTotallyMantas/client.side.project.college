@@ -50,7 +50,7 @@ async function GetStaticData() {
     return data;
 }
 
-function displayGameInfo(gameInfo) {
+async function displayGameInfo(gameInfo) {
 
     if(!gameInfo) {
         document.getElementById('game-info').innerHTML = 'Game not found';
@@ -62,7 +62,7 @@ function displayGameInfo(gameInfo) {
     handleAgeRestriction(gameInfo.ratings, container);
     
     addGameDetails(gameInfo, container);
-    addRequirementsTabs(gameInfo, container);
+    
     const wrapper = document.createElement('div');
     wrapper.setAttribute('id', 'game_info_wrapper');
     wrapper.className = 'row ';
@@ -71,7 +71,9 @@ function displayGameInfo(gameInfo) {
 
     addDeveloperPublisherInfo(gameInfo, wrapper);
     
-    addCategoriesAndGenres(gameInfo, wrapper);
+   await addCategoriesAndGenres(gameInfo, wrapper);
+
+    addRequirementsTabs(gameInfo, wrapper);
 
     
     container.appendChild(wrapper);
@@ -124,14 +126,26 @@ function addGameDetails(gameInfo,container) {
 }
 
 function addRequirementsTabs(gameInfo, container) {
-    const requirementsPlatform = document.getElementById('requirements');
-    requirementsPlatform.classList.add('dynamic-element');
+    const requirementsPlatform = document.createElement('div');
+    requirementsPlatform.id = 'requirements';
+    requirementsPlatform.className = 'row dynamic-element';
+
+    const Title = document.createElement('h1');
+    Title.textContent = 'System Requirements';
+    Title.className = 'text-center p-4';
+    requirementsPlatform.appendChild(Title);
+    
+
+    
+
     const tabsContainer = createTabs(gameInfo.platforms);
     const requirementsContent = createRequirementsContent(gameInfo);
 
     requirementsPlatform.append(tabsContainer, requirementsContent);
-    setupTabSwitching();
 
+    container.appendChild(requirementsPlatform);
+    
+    
     setTimeout(() => {
         requirementsPlatform.classList.add('visible');
     }, 10);
@@ -143,8 +157,8 @@ function createTabs(platforms) {
 
     for (const [platform, isAvailable] of Object.entries(platforms)) {
         if (isAvailable) {
-            const tab = document.createElement('div');
-            tab.className = 'platform_tab';
+            const tab = document.createElement('button');
+            tab.className = 'platform_tab btn btn-primary';
             tab.id = `platform-${platform}`;
             tab.textContent = capitalize(platform);
             tabsContainer.appendChild(tab);
@@ -156,7 +170,7 @@ function createTabs(platforms) {
 
 function createRequirementsContent(gameInfo) {
     const contentContainer = document.createElement('div');
-    contentContainer.className = 'requirements_content';
+    contentContainer.className = 'requirements_content border border-4 ';
 
     ['windows', 'mac', 'linux'].forEach(platform => {
         if (gameInfo.platforms[platform]) {
@@ -167,7 +181,7 @@ function createRequirementsContent(gameInfo) {
             const platformRequirement = platform === 'windows' ? 'pc' : platform;
             requirementsDiv.innerHTML = `
                 <div id="minimum-requirements">${gameInfo[`${platformRequirement}_requirements`]?.minimum || 'N/A'}</div>
-                <div id="recommended-requirements">${gameInfo[`${platformRequirement}_requirements`]?.recommended || 'N/A'}</div>
+                <div id="recommended-requirements" class="border-start border-4 ps-2">${gameInfo[`${platformRequirement}_requirements`]?.recommended || 'N/A'}</div>
             `;
             
             contentContainer.appendChild(requirementsDiv);
@@ -177,7 +191,7 @@ function createRequirementsContent(gameInfo) {
     return contentContainer;
 }
 
-function setupTabSwitching() {
+export function setupTabSwitching() {
     document.querySelectorAll('.platform_tab').forEach(tab => {
         tab.addEventListener('click', function () {
             document.querySelectorAll('.platform_tab, .platform_requirements').forEach(elem => elem.classList.remove('active','requirements-animated','custom-button-click')	
@@ -195,11 +209,11 @@ function setupTabSwitching() {
 async function addLanguages(gameInfo, container) {
     const div = document.createElement('div');
     div.id = 'language_section';
-    div.className = 'table-responsive flex-fill ';
+    div.className = 'table-responsive border border-4 rounded flex-fill p-0 m-0  ';
     const languages = await parseLanguages(gameInfo.supported_languages);
     const table = document.createElement('table');
     table.id = 'language_table';
-    table.className = 'table-secondary bg-secondary';
+    table.className = 'table table-bordered table-hover m-0';
 
     const headers = ['Language', 'Interface', 'Full Audio', 'Subtitles'];
     const thead = table.createTHead();
@@ -208,6 +222,7 @@ async function addLanguages(gameInfo, container) {
     headers.forEach(text => headerRow.insertCell().textContent = text);
 
     const tbody = table.createTBody();
+    
     languages.forEach(({ name, fullAudio }) => {
         const row = tbody.insertRow();
         
@@ -262,12 +277,12 @@ function addCarousel(gameInfo, container) {
 function addDeveloperPublisherInfo(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'dev-pub-section';
-    section.className = 'flex-fill col-sm-3 bg-secondary rounded-start-4';
+    section.className = 'flex-fill col-sm-3 border-start border-top border-bottom border-4 rounded-start-4 d-flex justify-content-center align-items-center';
 
     const addList = (title, items) => {
         const label = document.createElement('h2');
         label.textContent = title;
-        label.className = 'border-bottom';
+        label.className = 'border-bottom border-2';
         section.appendChild(label);
 
         const list = document.createElement('ul');
@@ -296,11 +311,11 @@ function addDeveloperPublisherInfo(gameInfo, container) {
 async function addCategoriesAndGenres(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'cat-gen-section';
-    section.className = 'flex-fill col-sm-3 bg-secondary rounded-end-4';
+    section.className = 'flex-fill col-sm-3 border border-4 rounded-end-4';
 
     const h2 = document.createElement('h2');
     h2.textContent = 'Categories';
-    h2.className = 'border-bottom';
+    h2.className = 'border-bottom border-2';
     section.appendChild(h2);
     const categoryList = document.createElement('ul');
     categoryList.className = 'category-list';

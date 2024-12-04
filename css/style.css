@@ -58,7 +58,7 @@ ul {
     margin: 5px;
     
   /*  background: linear-gradient(to right, #385c85, #233555); */
-    border-radius: 15px;
+   /* border-radius: 15px; */
     padding: 1em;
     /* color: white; */
 
@@ -114,23 +114,19 @@ p.bb_paragraph {
 
     border-radius: 15px;
   }
-  
-  .platform_tab:hover {
-    
-     background: -webkit-linear-gradient(to right, #406997, #364f80);  /* Chrome 10-25, Safari 5.1-6 */
-     background: linear-gradient(to right, #385c85, #233555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+
   
   .platform_tab.active {
-    background: #395486;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #406997, #364f80);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #385c85, #233555); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
     font-weight: bold;
   }
   
   /* Requirements Platform Content */
   .requirements_content {
     font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 15px;
   }
   #game-info a {
     text-decoration: none;
@@ -143,12 +139,7 @@ p.bb_paragraph {
 
   .platform_requirements {
     display: none; /* Only show the active tab */
-    padding: 10px;
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    border-radius: 15px;
+   
   }
   
   .platform_requirements.active {
@@ -223,12 +214,8 @@ p.bb_paragraph {
     
 }
 #dev-pub-section {
-    display: flex;
-    /* text-align: left; */
     margin: 20px 0px;
     flex-wrap: wrap;
-    align-items: baseline;
-    flex-direction: column;
 }
 #dev-pub-section h2 {
     justify-self: center;
@@ -588,7 +575,7 @@ ul.category-list {
     margin: 20px 0;
     font-family: Arial, sans-serif;
     /*font-size: 14px; */
-    background-color: #1b2838; 
+    
     color: #c7d5e0; 
 }
 
@@ -596,12 +583,12 @@ ul.category-list {
 #language_table td {
     padding: 10px;
     text-align: center;
-    border: 1px solid #3a3f44;
+    
 }
 
 #language_table th {
-    background-color: #1f3b4d; 
-    color: #c7d5e0; 
+    
+   
     font-weight: normal;
 }
 
@@ -620,8 +607,9 @@ ul.category-list {
 }
 
 #language_table tr:hover {
-    background-color: #2a475e;
+   /* background-color: #77c1fd;    */
 }
+
 
 
 

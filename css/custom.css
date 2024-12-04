@@ -28,8 +28,8 @@
   
   
 
-  p, ul, li, label, button, .navbar a, h2{
-    font-size: calc(1rem + 0.5vw); 
+  p, ul, li, label, button, .navbar a, h2, strong{
+    font-size: calc(1rem + 0.9vw); 
   }
   .dropdown-item {
     --bs-dropdown-link-active-color: none !important; 
@@ -82,10 +82,12 @@
   
  #genres-list li {
     text-align: center;
-    font-size: 1.2rem;
-    /* color: #ffffff;  */
+  
   }
+  #language_table {
 
+    border-color: #dee2e6 !important;
+  }
   .ratio img {
     object-fit: cover;
   }
