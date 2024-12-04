@@ -199,7 +199,7 @@ async function addLanguages(gameInfo, container) {
     const languages = await parseLanguages(gameInfo.supported_languages);
     const table = document.createElement('table');
     table.id = 'language_table';
-    table.className = 'table';
+    table.className = 'table-secondary bg-secondary';
 
     const headers = ['Language', 'Interface', 'Full Audio', 'Subtitles'];
     const thead = table.createTHead();
@@ -262,17 +262,21 @@ function addCarousel(gameInfo, container) {
 function addDeveloperPublisherInfo(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'dev-pub-section';
-    section.className = 'flex-fill col-sm-3';
+    section.className = 'flex-fill col-sm-3 bg-secondary rounded-start-4';
 
     const addList = (title, items) => {
         const label = document.createElement('h2');
         label.textContent = title;
+        label.className = 'border-bottom';
         section.appendChild(label);
 
         const list = document.createElement('ul');
         list.id = title.toLowerCase()+ '-list';
         if(title === 'Genres') {
             list.className = 'd-flex flex-wrap justify-content-center';
+        }
+        else {
+            list.className = 'justify-content-center';
         }
         items.forEach(item => {
             const listItem = document.createElement('li');
@@ -292,10 +296,11 @@ function addDeveloperPublisherInfo(gameInfo, container) {
 async function addCategoriesAndGenres(gameInfo, container) {
     const section = document.createElement('div');
     section.id = 'cat-gen-section';
-    section.className = 'flex-fill col-sm-3';
+    section.className = 'flex-fill col-sm-3 bg-secondary rounded-end-4';
 
     const h2 = document.createElement('h2');
     h2.textContent = 'Categories';
+    h2.className = 'border-bottom';
     section.appendChild(h2);
     const categoryList = document.createElement('ul');
     categoryList.className = 'category-list';

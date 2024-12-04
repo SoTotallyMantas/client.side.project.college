@@ -1,7 +1,9 @@
 import { fetchFeaturedCategories } from './modules/fetchCategories.js';
-import {adjustSearchResults, populateSearchbar,filterSearchBarResults,populateTable,fetchAppList,filterAppList } from './modules/appList.js';
-import { navbarMobile } from './modules/navbar.js';
-import { hideResults } from './modules/utils.js';
+import {populateTable,fetchAppList,filterAppList } from './modules/appList.js';
+import { InitializeSettings } from './modules/SettingsInitializer.js';
+
+
+InitializeSettings();
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });

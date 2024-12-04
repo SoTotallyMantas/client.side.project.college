@@ -17,7 +17,9 @@ export async function populateTable(jsonData) {
 
     apps.forEach(app => {
         const row = document.createElement("tr");
+
         const nameCell = document.createElement("td");
+        nameCell.className = "bg-body-tertiary"
         const link = document.createElement("a");
 
         const currentPath = window.location.pathname.split('/').pop();

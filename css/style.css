@@ -332,10 +332,7 @@ ul.category-list {
         padding-top: 0em !important;
         
     }
-    input[type=text], input[type=email], select, textarea {
-
-        width: 85% !important;
-    }
+   
 
     #detailed_description {
         padding: 1em 1em 1em 1em !important;
@@ -537,7 +534,7 @@ ul.category-list {
   #Contact
   {
     display: flex;
-    margin: 2em;
+   
    /* background: linear-gradient(to right, #243B55, #141E30); */
    /* color: white;  */
     flex-direction: column;
@@ -558,9 +555,7 @@ ul.category-list {
   }
    
   input[type=text], input[type=email], select, textarea {
-    margin: 1em;
-    width: 90%;
-    padding: 1em; 
+    
     border: 1px solid #ccc;
     border-radius: 4px; 
     box-sizing: border-box; 
