@@ -17,82 +17,105 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bd-navbar sticky-top fixed-top  border-bottom border-secondary" id="Mainnavbar">
+    <nav class="navbar navbar-expand-xl navbar-dark bd-navbar sticky-top fixed-top  border-bottom border-secondary"
+        id="Mainnavbar">
         <div class="container-fluid">
-         <a class="navbar-brand" href="../index.html">Games Catalog</a>
-         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse" id="navbarCollapse" style="">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="../index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="Games.html">Games</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="About.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Contact.html">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="schema.html">Schema</a>
-              </li>
-               <li class="nav-item dropdown">
-                 <button type="button"  id="buttonSettings" class="btn btn-secondary  me-3 nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                   Settings
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <div class="settings-item d-flex flex-wrap dropdown-item">
-                        <label for="header-font-range" class="form-label">Header font size</label>
-                        <input type="range" class="form-range" id="header-font-range" min="12" max="48" step="1">
-                        <span id="header-font-size-value" class="form-range-value"></span>
-                      </div>
+            <a class="navbar-brand" href="../index.html">Games Catalog</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" title="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse " id="navbarCollapse" style="">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="../index.html">Home</a>
                     </li>
-                    <li>
-                      <div class="settings-item  dropdown-item">
-                        <label for="header-color" class="form-label">Header color:</label>
-                        <input type="color" id="header-color" class="form-control form-control-color" title="Choose header color">
-                      </div>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Games.html">Games</a>
                     </li>
-                    <li>
-                      <div class="settings-item  dropdown-item">
-                        <label for="restore-Default" class="form-label d-flex flex-wrap">Restore Default</label>
-                        <button id="restore-Default" class="btn btn-secondary">Reset</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
                     </li>
-                    <li class="dropdown-divider"></li>
-                    <li class="settings-item dropdown-item">
-                      <button class ="btn btn-link nav-link dropdown-toggle d-flex align-items-center py-3 px-0 px-lg-2" id="theme" type="button"  data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
-                        <i id="theme-icon" class="me-2 bi-sun opacity-50"></i>
-                        Toggle theme
-                      </button>
-                      <ul  id="Theme-Menu"class="dropdown-menu dropdown-menu-end" aria-labelledby="theme-text">
-                        <li><button type="button" class="theme-dropdown-item dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-                          <i class="me-2 bi-sun opacity-50"></i>
-                          Light
-                        </button></li>
-                        <li><button type="button" class="theme-dropdown-item dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-                          <i class="me-2 bi-moon opacity-50"></i>
-                          Dark
-                        </button></li>
-                        <li> <button type="button" class="theme-dropdown-item dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
-                          <i class="me-2 bi-display opacity-50"></i>
-                          Auto
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="schema.html">Schema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="game.html">Game</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <button type="button" id="buttonSettings"
+                            class="btn btn-secondary  ms-4 me-3 nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            Settings
                         </button>
-                        </li>
-                      </ul>
+                        <ul class="dropdown-menu  mb-3">
+                            <li>
+                                <div class="settings-item d-flex flex-wrap dropdown-item">
+                                    <label for="header-font-range" class="form-label">Header font size</label>
+                                    <input type="range" class="form-range" id="header-font-range" min="12" max="48"
+                                        step="1">
+                                    <span id="header-font-size-value" class="form-range-value"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="settings-item  dropdown-item">
+                                    <label for="header-color" class="form-label">Header color:</label>
+                                    <input type="color" id="header-color" class="form-control form-control-color"
+                                        title="Choose header color">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="settings-item  dropdown-item">
+                                    <label for="restore-Default" class="form-label d-flex flex-wrap">Restore
+                                        Default</label>
+                                    <button id="restore-Default" class="btn btn-secondary">Reset</button>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="settings-item dropdown-item">
+                                <button
+                                    class="btn btn-link nav-link dropdown-toggle d-flex align-items-center py-3 px-0 px-lg-2"
+                                    id="theme" type="button" data-bs-toggle="dropdown" data-bs-display="static"
+                                    aria-label="Toggle theme">
+                                    <i id="theme-icon" class="me-2 bi-sun opacity-50"></i>
+                                    Toggle theme
+                                </button>
+                                <ul id="Theme-Menu" class="dropdown-menu dropdown-menu-end"
+                                    aria-labelledby="theme-text">
+                                    <li><button type="button"
+                                            class="theme-dropdown-item dropdown-item d-flex align-items-center"
+                                            data-bs-theme-value="light">
+                                            <i class="me-2 bi-sun opacity-50"></i>
+                                            Light
+                                        </button></li>
+                                    <li><button type="button"
+                                            class="theme-dropdown-item dropdown-item d-flex align-items-center"
+                                            data-bs-theme-value="dark">
+                                            <i class="me-2 bi-moon opacity-50"></i>
+                                            Dark
+                                        </button></li>
+                                    <li> <button type="button"
+                                            class="theme-dropdown-item dropdown-item d-flex align-items-center"
+                                            data-bs-theme-value="auto">
+                                            <i class="me-2 bi-display opacity-50"></i>
+                                            Auto
+                                        </button>
+                                    </li>
+
+                                </ul
+                                >
+                            </li>
+                        </ul>
+
                     </li>
-                  </ul>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-success" type="submit">Search</button>
-            </form>
-          </div>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
     </nav>
 </header>
