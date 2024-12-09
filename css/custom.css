@@ -29,7 +29,7 @@
   
 
   p, ul, li, label, button, .navbar a, h2, strong{
-    font-size: calc(1rem + 0.9vw); 
+    font-size: calc(1rem + 0.5vw); 
   }
   .dropdown-item {
     --bs-dropdown-link-active-color: none !important; 
