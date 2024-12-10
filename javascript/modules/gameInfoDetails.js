@@ -243,11 +243,11 @@ function addCarousel(gameInfo, container) {
 
     gameInfo.screenshots.forEach((screenshot, index) => {
         const item = document.createElement('div');
-        item.className = `carousel-item ${index === 0 ? 'active' : ''} ratio ratio-16x9 `;
+        item.className = `carousel-item ${index === 0 ? 'active' : ''} ratio ratio-4x3 `;
 
         const img = document.createElement('img');
         img.src = screenshot.path_full;
-        img.className = 'd-block  w-100 ';
+        img.className = 'd-block  img-fluid';
         img.alt = 'screenshot';
         item.appendChild(img);
 

@@ -6,7 +6,7 @@ export function ValidateForm() {
     const LastName = document.getElementById('lname');
     const Email = document.getElementById('email');
     const Message = document.getElementById('subject');
-
+    let EmailDomain = new RegExp("@[a-zA-Z0-9]+\\.+[a-zA-Z]{3}$");
 
     FirstName.addEventListener('input', function () {
         if (FirstName.validity.valid) {
@@ -36,19 +36,31 @@ export function ValidateForm() {
             showLastNameError();
         }
     });
-
+    
+    
+    
     Email.addEventListener('input', function () {
         if (Email.validity.valid) {
-           
+            let check = EmailDomain.test(Email.value)
+            if(!check)
+            {
+              const emailFeedback= document.getElementById("emailerror");
+                emailFeedback.innerHTML = "Wrong Domain";
+                Email.classList.add('is-invalid');
+                Email.classList.remove('is-valid');
+            }
+            else
+            {
             Email.nextElementSibling.textContent = '';
             Email.classList.remove('is-invalid');
             Email.classList.add('is-valid');
+            }
         } else if (Email.validity.valueMissing) {
             Email.classList.remove('is-valid');
             Email.classList.remove('is-invalid');
         } else {
             showEmailError();
-        }
+        }   
     });
 
     Message.addEventListener('input', function () {

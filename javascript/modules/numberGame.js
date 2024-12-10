@@ -11,7 +11,7 @@ input.focus();
 
 const resetGame = () => {
   randomNum = Math.floor(Math.random() * 100); 
-  chance = 10;  
+  chance = 6;  
   input.disabled = false; 
   remainChances.textContent = chance; 
   guess.textContent = ""; 
@@ -21,7 +21,7 @@ const resetGame = () => {
 };
 
 let randomNum = Math.floor(Math.random() * 100);
-let chance = 10;
+let chance = 6;
 
 
 checkButton.addEventListener("click", () => {
@@ -42,18 +42,18 @@ checkButton.addEventListener("click", () => {
   } else if (inputValue > randomNum && inputValue < 100) { 
     guess.textContent = "Your guess is high";
     chance--;
-    remainChances.textContent = chance;
+    remainChances.textContent = `Attempts left: ${chance}`;
     guess.style.color = "";
    
   } else if (inputValue < randomNum && inputValue > 0) { 
     guess.textContent = "Your guess is low";
     chance--;
-    remainChances.textContent = chance;
+    remainChances.textContent = `Attempts left: ${chance}`;;
     guess.style.color = "";
    
   } else{
     guess.textContent = "Please enter a number between 1 and 99";
-    remainChances.textContent = chance;
+    remainChances.textContent = `Attempts left: ${chance}`;;
     guess.style.color = "#e74c3c";
   }
 
